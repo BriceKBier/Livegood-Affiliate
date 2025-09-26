@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiveGood Landing Page</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header styling */
+        header {
+            background: #0288d1;
+            color: #fff;
+            padding: 50px 20px;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        header nav ul li a:hover {
+            color: #ffdd57;
+            text-decoration: underline;
+        }
+
+        /* Section styling with colors */
+        section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        #about {
+            background-color: #e3f2fd;
+        }
+
+        #services {
+            background-color: #fff3e0;
+        }
+
+        #contact {
+            background-color: #e8f5e9;
+        }
+
+        section:hover {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Button styling */
+        button {
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #005fa3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to LiveGood</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About LiveGood</h2>
+        <p>With a commitment to helping people, LiveGood brings you the most advanced nutritional supplements on the market, made with only the purest, highest quality, results-driven ingredients on the planet, without the expensive pricing mark-ups of other companies.</p>
+        <button>Learn More</button>
+    </section>
+
+    <section id="services">
+        <h2>Services</h2>
+        <ul>
+            <li>Advanced Nutritional Supplements</li>
+            <li>Wellness Consulting</li>
+            <li>Health Education</li>
+        </ul>
+        <button>Get Started</button>
+    </section>
+
+    <section id="contact">
+        <h2>Contact LiveGood</h2>
+        <p>Email: support@livegood.com</p>
+        <p>Phone: (123) 456-7890</p>
+        <button>Send Message</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 LiveGood. All rights reserved.</p>
+    </footer>
+</body>
+</html>
