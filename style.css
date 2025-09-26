@@ -1,135 +1,170 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LiveGood Landing Page</title>
-    <style>
-        /* General body styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
+/* ===== Base / Layout ===== */
+html { scroll-behavior: smooth; }
+:root {
+  --sidebar-width: 200px;
+  --sidebar-gap: 20px;
+  --max-card: 1100px;
+  --radius-card: 14px;
+  --radius-inner: 12px;
+  --shadow: 0 8px 24px rgba(0,0,0,0.14);
+  --shadow-hover: 0 12px 28px rgba(0,0,0,0.20);
+  --brand: #0077cc;
+  --brand-dark: #005fa3;
+  --success: #2e7d32;
+  --success-dark: #256429;
+  --text: #223;
+  --muted: #5b6470;
+  --surface: #e9edf3;
+}
+* { box-sizing: border-box; }
 
-        /* Header styling */
-        header {
-            background: #0288d1;
-            color: #fff;
-            padding: 50px 20px;
-        }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  margin: 0; padding: 0;
+  background: #f6f8fb; color: var(--text);
+  line-height: 1.65;
+}
 
-        header nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
+/* ===== Sidebar ===== */
+nav.side-nav {
+  position: fixed; top: 20px; left: 20px;
+  width: var(--sidebar-width);
+  z-index: 2000;
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  padding-right: 2px;
+}
+nav.side-nav ul {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 10px;
+}
+nav.side-nav a {
+  display: block; text-align: center;
+  color: #fff; text-decoration: none; font-weight: 700;
+  padding: 11px 14px; border-radius: 10px;
+  transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+  font-size: 0.98rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+}
 
-        header nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+/* Sidebar gradients (12 items) */
+nav.side-nav li:nth-child(1) a  { background: linear-gradient(135deg, #0077cc, #00b4d8); }
+nav.side-nav li:nth-child(2) a  { background: linear-gradient(135deg, #2e7d32, #4caf50); }
+nav.side-nav li:nth-child(3) a  { background: linear-gradient(135deg, #ff9800, #ff5722); }
+nav.side-nav li:nth-child(4) a  { background: linear-gradient(135deg, #6a1b9a, #9c27b0); }
+nav.side-nav li:nth-child(5) a  { background: linear-gradient(135deg, #d81b60, #e91e63); }
+nav.side-nav li:nth-child(6) a  { background: linear-gradient(135deg, #009688, #26a69a); }
+nav.side-nav li:nth-child(7) a  { background: linear-gradient(135deg, #c62828, #ef5350); }
+nav.side-nav li:nth-child(8) a  { background: linear-gradient(135deg, #1565c0, #42a5f5); }
+nav.side-nav li:nth-child(9) a  { background: linear-gradient(135deg, #f57f17, #fbc02d); }
+nav.side-nav li:nth-child(10) a { background: linear-gradient(135deg, #4e342e, #8d6e63); }
+nav.side-nav li:nth-child(11) a { background: linear-gradient(135deg, #212121, #616161); }
+nav.side-nav li:nth-child(12) a { background: linear-gradient(135deg, #1a237e, #3f51b5); }
 
-        header nav ul li a:hover {
-            color: #ffdd57;
-            text-decoration: underline;
-        }
+nav.side-nav a:hover { filter: brightness(1.12); transform: translateY(-1px); }
 
-        /* Section styling with colors */
-        section {
-            padding: 40px 20px;
-            max-width: 800px;
-            margin: 20px auto;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
+/* ===== Hero ===== */
+header.hero {
+  background: url('banner.jpg') no-repeat center center/cover;
+  height: 360px;
+  position: relative;
+  margin-left: calc(var(--sidebar-width) + var(--sidebar-gap));
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  box-shadow: 0 12px 40px rgba(18,42,70,.18) inset;
+}
+header.hero::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit;
+  background: linear-gradient(to bottom right, rgba(0,0,0,.25), rgba(0,0,0,.25));
+}
 
-        #about {
-            background-color: #e3f2fd;
-        }
+/* ===== Content ===== */
+.content {
+  margin-left: calc(var(--sidebar-width) + var(--sidebar-gap));
+  padding: 18px 22px 48px;
+}
 
-        #services {
-            background-color: #fff3e0;
-        }
+/* ===== Cards ===== */
+section.photo-card {
+  position: relative;
+  max-width: var(--max-card);
+  margin: 26px auto;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+section.photo-card::before {
+  content:"";
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to bottom right, rgba(0,0,0,0.22), rgba(0,0,0,0.22)),
+    var(--bg, url('fallback.jpg'));
+  background-size: cover; background-position: center;
+  z-index: 0;
+}
+section.photo-card .inner {
+  position: relative; z-index: 1;
+  margin: 18px;
+  background: rgba(255,255,255,0.96);
+  border-radius: var(--radius-inner);
+  padding: 26px 24px;
+}
+section.photo-card h2 { margin: 0 0 10px; font-size: 28px; }
+section.photo-card h3 { margin: 18px 0 8px; font-size: 20px; color: #1b365d; }
+section.photo-card p, section.photo-card li { font-size: 16px; color: var(--muted); }
 
-        #contact {
-            background-color: #e8f5e9;
-        }
+section.photo-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
 
-        section:hover {
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transform: translateY(-5px);
-        }
+/* ===== Buttons ===== */
+.card-actions {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  margin-top: 14px;
+}
+.btn {
+  display:inline-block; background-color: var(--brand); color:#fff;
+  border:none; padding:11px 18px; border-radius:10px;
+  text-decoration:none; cursor:pointer; font-size:16px; font-weight:700;
+  transition: background-color .2s ease, transform .2s ease, box-shadow .2s ease;
+  box-shadow: 0 6px 16px rgba(0,119,204,.25);
+}
+.btn:hover { background-color: var(--brand-dark); transform: translateY(-1px); }
 
-        /* Footer styling */
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #333;
-            color: white;
-        }
+/* Special green button for Detox */
+.btn.green {
+  background-color: var(--success);
+  box-shadow: 0 6px 16px rgba(46,125,50,.28);
+}
+.btn.green:hover {
+  background-color: var(--success-dark);
+}
 
-        /* Button styling */
-        button {
-            background-color: #0077cc;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
+/* ===== Video Grid ===== */
+.video-grid {
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.video-grid iframe {
+  width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+  background: #000;
+}
+@media (max-width: 940px) {
+  .video-grid { grid-template-columns: 1fr; }
+}
 
-        button:hover {
-            background-color: #005fa3;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Welcome to LiveGood</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+footer {
+  text-align:center; padding: 22px 10px; background:#1f2937; color:#fff;
+  margin-left: calc(var(--sidebar-width) + var(--sidebar-gap));
+}
+footer a { color:#fff; text-decoration: underline; }
 
-    <section id="about">
-        <h2>About LiveGood</h2>
-        <p>With a commitment to helping people, LiveGood brings you the most advanced nutritional supplements on the market, made with only the purest, highest quality, results-driven ingredients on the planet, without the expensive pricing mark-ups of other companies.</p>
-        <button>Learn More</button>
-    </section>
-
-    <section id="services">
-        <h2>Services</h2>
-        <ul>
-            <li>Advanced Nutritional Supplements</li>
-            <li>Wellness Consulting</li>
-            <li>Health Education</li>
-        </ul>
-        <button>Get Started</button>
-    </section>
-
-    <section id="contact">
-        <h2>Contact LiveGood</h2>
-        <p>Email: support@livegood.com</p>
-        <p>Phone: (123) 456-7890</p>
-        <button>Send Message</button>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 LiveGood. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+/* ===== Small-screen tweaks ===== */
+@media (max-width: 720px) {
+  nav.side-nav { position: static; width: auto; margin: 10px 10px 0; }
+  .content, header.hero, footer { margin-left: 0; }
+  .content { padding: 6px 14px 40px; }
+  nav.side-nav ul { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+  nav.side-nav a { font-size: .92rem; padding: 9px 12px; border-radius: 9px; }
+}
