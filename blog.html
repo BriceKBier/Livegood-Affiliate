@@ -1,41 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog - LiveGood</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LiveGood Blog</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>LiveGood Blog</h1>
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="blog.html">Blog</a>
-    </nav>
-  </header>
+  <div class="wrap">
+    <!-- Site Header -->
+    <header class="site" role="banner">
+      <div class="logo" aria-label="LiveGood">
+        <span class="logo__mark" aria-hidden="true"></span>
+        <span>LiveGood</span>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html" aria-current="page">Blog</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <article>
-      <h2>Welcome to the Blog</h2>
-      <p><em>September 27, 2025</em></p>
-      <p>Thanks for checking out our site! This blog is where we’ll share updates, health tips, and ways to get the most out of LiveGood. Keep an eye out for new posts coming soon.</p>
-    </article>
+    <!-- Hero -->
+    <section class="hero">
+      <h1>LiveGood Blog</h1>
+      <p>Updates, health tips, and little experiments in feeling better without overcomplicating it.</p>
+    </section>
 
-    <article>
-      <h2>3 Simple Ways to Boost Daily Energy</h2>
-      <p><em>September 28, 2025</em></p>
-      <p>Feeling low on energy? Here are three easy habits you can start today:</p>
-      <ul>
-        <li>Stay hydrated—drink water before coffee.</li>
-        <li>Take short walks—movement wakes your body up.</li>
-        <li>Prioritize sleep—consistency matters more than hours.</li>
-      </ul>
-    </article>
-  </main>
+    <!-- Blog Posts -->
+    <main class="posts" role="main">
+      <!-- Post: Welcome -->
+      <article class="post">
+        <div class="post__header">
+          <h2 class="post__title">Welcome to the Blog</h2>
+          <time class="post__date" datetime="2025-09-27">September 27, 2025</time>
+        </div>
+        <div class="post__body">
+          <p>Thanks for checking out our site! This blog is where we’ll share updates, health tips, and ways to get the most out of LiveGood. Keep an eye out for new posts coming soon.</p>
+        </div>
+      </article>
 
-  <footer>
-    <p>&copy; 2025 LiveGood. All rights reserved.</p>
-  </footer>
+      <!-- Post: Energy Tips -->
+      <article class="post">
+        <div class="post__header">
+          <h2 class="post__title">3 Simple Ways to Boost Daily Energy</h2>
+          <time class="post__date" datetime="2025-09-28">September 28, 2025</time>
+        </div>
+        <div class="post__body">
+          <p>Feeling low on energy? Here are three easy habits you can start today:</p>
+          <ul class="clean">
+            <li><strong>Stay hydrated</strong> — drink water before coffee.</li>
+            <li><strong>Take short walks</strong> — movement wakes your body up.</li>
+            <li><strong>Prioritize sleep</strong> — consistency matters more than hours.</li>
+          </ul>
+        </div>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-card">© 2025 LiveGood. All rights reserved.</div>
+    </footer>
+  </div>
 </body>
 </html>
