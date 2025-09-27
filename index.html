@@ -1,183 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LiveGood Landing Page</title>
-    <style>
-        /* General body styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LiveGood Landing Page</title>
 
-        /* Header styling */
-        header {
-            background: #0288d1;
-            color: #fff;
-            padding: 50px 20px;
-        }
+  <!-- Inline styles so the new box is guaranteed to show -->
+  <style>
+    :root {
+      --brand: #0ea5e9;         /* sky blue */
+      --brand-dark: #0369a1;
+      --bg: #f4f4f4;
+      --text: #333;
+      --white: #fff;
+      --shadow: 0 10px 20px rgba(0,0,0,.08);
+      --radius: 16px;
+    }
 
-        header nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
 
-        header nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    a { color: var(--brand-dark); text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
 
-        header nav ul li a:hover {
-            color: #ffdd57;
-            text-decoration: underline;
-        }
+    .container {
+      width: min(1100px, 92vw);
+      margin: 0 auto;
+      padding: 24px 0;
+    }
 
-        /* Section styling with colors */
-        section {
-            padding: 40px 20px;
-            max-width: 800px;
-            margin: 20px auto;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
+    header {
+      background: linear-gradient(0deg, #e6f4ff, #ffffff);
+      border-bottom: 1px solid #e5e7eb;
+    }
+    header .brand {
+      display: flex; align-items: center; gap: 12px;
+      padding: 18px 0;
+    }
+    header .brand h1 {
+      margin: 0; font-size: 24px; letter-spacing: .2px;
+    }
 
-        #about {
-            background-color: #e3f2fd;
-        }
+    /* Example existing main content */
+    main { padding: 12px 0 0; }
+    .hero {
+      background: var(--white);
+      border: 1px solid #e5e7eb;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+    .hero h2 { margin: 0 0 10px; font-size: 28px; }
+    .hero p { margin: 0 0 16px; }
+    .hero .cta {
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+    .spacer { height: 24px; }
 
-        #services {
-            background-color: #fff3e0;
-        }
+    /* >>> NEW BOX SECTION (this is what you asked to add) <<< */
+    #new-box-section {
+      margin: 28px 0 0;
+    }
+    .new-box {
+      position: relative;
+      background: #fff8e6;                 /* warm light background so it pops */
+      border: 2px dashed #f59e0b;          /* amber dashed border for visibility */
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      overflow: hidden;
+    }
+    .new-box::after {
+      content: "NEW";
+      position: absolute;
+      top: 12px; right: -24px;
+      background: #f59e0b;
+      color: #ffffff;
+      font-weight: bold;
+      transform: rotate(15deg);
+      padding: 6px 28px;
+      border-radius: 999px;
+      box-shadow: 0 6px 14px rgba(0,0,0,.12);
+      letter-spacing: .5px;
+    }
+    .new-box h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+    .new-box p {
+      margin: 0 0 14px;
+    }
+    .new-box .actions {
+      display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 600;
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+    }
+    .btn-primary {
+      background: var(--brand);
+      border-color: var(--brand);
+      color: #fff;
+    }
+    .btn-primary:hover { background: var(--brand-dark); }
 
-        #contact {
-            background-color: #e8f5e9;
-        }
-
-        #opportunity {
-            background-color: #ffffff;
-        }
-
-        section:hover {
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transform: translateY(-5px);
-        }
-
-        /* Footer styling */
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #333;
-            color: white;
-        }
-
-        /* Button styling */
-        button {
-            background-color: #0077cc;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #005fa3;
-        }
-    </style>
+    footer {
+      margin-top: 36px;
+      background: #111827;
+      color: #d1d5db;
+      padding: 24px 0;
+      text-align: center;
+    }
+    footer p { margin: 0; font-size: 14px; }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to LiveGood</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#opportunity">Opportunity</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="container">
+      <div class="brand">
+        <!-- Optional logo -->
+        <!-- <img src="logo.png" alt="LiveGood" width="40" height="40"/> -->
+        <h1>LiveGood</h1>
+      </div>
+    </div>
+  </header>
 
-    <section id="about">
-        <h2>About LiveGood</h2>
-        <p>With a commitment to helping people, LiveGood brings you the most advanced nutritional supplements on the market, made with only the purest, highest quality, results-driven ingredients on the planet, without the expensive pricing mark-ups of other companies.</p>
-        <button>Learn More</button>
+  <main class="container">
+    <!-- ===== Example existing content (keep yours) ===== -->
+    <section class="hero">
+      <h2>Wellness That Doesn’t Break the Bank</h2>
+      <p>Shop LiveGood’s full line of wellness essentials—greens & reds powders, coffee, multis, D3–K2, magnesium,
+        collagen, aminos, probiotics, CBD, black seed oil, skin care, and more.</p>
+      <a class="cta" href="#new-box-section">See What’s New</a>
     </section>
 
-    <section id="services">
-        <h2>Services</h2>
-        <ul>
-            <li>Advanced Nutritional Supplements</li>
-            <li>Wellness Consulting</li>
-            <li>Health Education</li>
+    <div class="spacer"></div>
+
+    <!-- ===== YOUR OTHER SECTIONS WOULD BE HERE
+         (videos, product grids, left-side boxes, etc.) ===== -->
+
+    <!-- ===== >>> NEW BOX ADDED HERE (before the footer) <<< ===== -->
+    <section id="new-box-section" aria-labelledby="new-box-title">
+      <div class="new-box">
+        <h3 id="new-box-title">Limited-Time Wellness Starter Box</h3>
+        <p>
+          Fresh drop. A simple bundle to kick things off—our best-sellers with member pricing,
+          quick tips, and a 14-day check-in. Ships free this week.
+        </p>
+        <ul style="margin: 0 0 16px 18px;">
+          <li>Daily Essentials mini-pack</li>
+          <li>Quickstart guide (PDF)</li>
+          <li>Member-only discount code inside</li>
         </ul>
-        <button>Get Started</button>
+        <div class="actions">
+          <a class="btn btn-primary" href="#">Get the Starter Box</a>
+          <a class="btn" href="#">Learn More</a>
+        </div>
+      </div>
     </section>
+    <!-- ===== End NEW BOX ===== -->
+  </main>
 
-    <section id="contact">
-        <h2>Contact LiveGood</h2>
-        <p>Email: support@livegood.com</p>
-        <p>Phone: (123) 456-7890</p>
-        <button>Send Message</button>
-    </section>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 LiveGood. All rights reserved.</p>
+    </div>
+  </footer>
 
-    <section id="opportunity">
-        <h2>LiveGood: Wellness + Opportunity</h2>
-        <p>LiveGood is a health and wellness company rooted in the belief that true transformation comes from “products + people.” Our mission: make premium, clean-label supplements and wellness goods accessible (without extreme markups), and give everyday people the opportunity to build income by sharing those products with others.</p>
-
-        <h3>What LiveGood Offers</h3>
-        <ul>
-            <li>A full suite of products across wellness, fitness, detox, beauty, children’s health, pet health, and more.</li>
-            <li>Manufacturing in the U.S., under cGMP / NSF standards, with third-party testing and Certificates of Analysis (COAs).</li>
-            <li>A membership system—just $9.95/month or $99.95/year—that unlocks wholesale pricing.</li>
-            <li>A 90-day empty bottle guarantee for refunds.</li>
-            <li>Shipping in the U.S. (5–7 business days) and internationally (2–3 weeks).</li>
-        </ul>
-
-        <h3>The Business Opportunity (How You Can Earn)</h3>
-        <ol>
-            <li><strong>Become Affiliate + Member</strong> — lock in your position in a 2×15 matrix and get access to a business center.</li>
-            <li><strong>Weekly Fast Start Commissions</strong> — earn $25 per referral, plus bonus commissions up to 10 levels.</li>
-            <li><strong>Matrix Commissions</strong> — earn monthly based on the volume in your matrix.</li>
-            <li><strong>Matching Bonuses</strong> — match a percentage of your personally enrolled affiliates’ matrix earnings.</li>
-            <li><strong>Retail Commissions</strong> — earn 50% of the difference between retail and member pricing.</li>
-            <li><strong>Customer Acquisition Bonuses</strong> — 10% of a new member’s first product order (up to $300).</li>
-            <li><strong>Influencer Bonuses &amp; Bonus Pools</strong> — extra commission at higher volumes and ranks.</li>
-        </ol>
-
-        <h3>Why This Might Be For You</h3>
-        <ul>
-            <li>Low risk, low entry — no inventory required.</li>
-            <li>Recurring revenue potential via memberships.</li>
-            <li>Multiple ways to earn: retail, recruitment, or both.</li>
-            <li>Leverage through team growth and matching bonuses.</li>
-            <li>Immediate benefit — wholesale savings even if you don’t build a business.</li>
-        </ul>
-
-        <h3>What You Should Be Honest About</h3>
-        <ul>
-            <li>Big income claims are based on ideal scenarios.</li>
-            <li>Recruiting often drives early growth more than retail.</li>
-            <li>Your income depends on members staying active.</li>
-            <li>Be careful with product and earnings claims (regulatory rules apply).</li>
-            <li>Consistency and effort matter for long-term results.</li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 LiveGood. All rights reserved.</p>
-    </footer>
+  <!-- Optional sanity check to confirm the page loaded -->
+  <script>
+    // If you want a console confirmation while testing:
+    console.log("Page loaded. New box section mounted:", !!document.getElementById("new-box-section"));
+  </script>
 </body>
 </html>
