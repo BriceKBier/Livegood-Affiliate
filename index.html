@@ -19,18 +19,6 @@
       --shadow-soft:0 6px 16px rgba(16,24,40,0.08);
       --max: 980px;
     }
-    @media (prefers-color-scheme: dark){
-      :root{
-        --bg:#0c111a;
-        --card:#0f1522;
-        --ink:#e7e9ee;
-        --muted:#9aa3b2;
-        --brand:#77aaff;
-        --brand-ink:#98baff;
-        --shadow:0 10px 26px rgba(0,0,0,0.55);
-        --shadow-soft:0 6px 16px rgba(0,0,0,0.45);
-      }
-    }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{
@@ -54,12 +42,6 @@
       background: conic-gradient(from 200deg, rgba(11,114,231,.18), rgba(11,114,231,.32));
       box-shadow: var(--shadow-soft);
       border:1px solid rgba(11,114,231,.18);
-      position:relative;overflow:hidden;
-    }
-    .logo__mark::after{
-      content:"";position:absolute;inset:4px;border-radius:7px;
-      background:linear-gradient(180deg, rgba(255,255,255,.65), rgba(255,255,255,0));
-      mix-blend:overlay;opacity:.6;
     }
     nav ul{display:flex;gap:14px;margin:0;padding:0;list-style:none}
     nav a{
@@ -68,42 +50,23 @@
     nav a[aria-current="page"]{
       background:rgba(11,114,231,.08);color:var(--brand-ink);font-weight:600;border:1px solid rgba(11,114,231,.15);
     }
-    /* Hero */
     .hero{
       border-radius: var(--radius);
       background: linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,0)) , var(--card);
       box-shadow: var(--shadow);
       padding:28px;
-      position:relative;
-      overflow:hidden;
     }
-    .hero::before{
-      content:"";position:absolute;inset:auto -40px -60px -40px;height:140px;border-radius:100%;
-      background:radial-gradient(450px 120px at 50% 0, rgba(11,114,231,.08), transparent 70%);
-      pointer-events:none;
-    }
-    .hero h1{margin:0 0 6px;font-size: clamp(1.4rem, 2.8vw, 2rem);line-height:1.2}
+    .hero h1{margin:0 0 6px;font-size: clamp(1.4rem, 2.8vw, 2rem);}
     .hero p{margin:6px 0 0;color:var(--muted)}
-    .meta-row{
-      display:flex;align-items:center;gap:14px;color:var(--muted);font-size:.95rem;margin-top:14px;
-    }
-    .chip{
-      padding:6px 10px;border-radius:999px;background:rgba(11,114,231,.08);border:1px solid rgba(11,114,231,.15);
-      color:var(--brand-ink);font-weight:600;font-size:.85rem;
-    }
-
-    /* Posts */
     .posts{display:grid;gap:18px;margin-top:28px}
     article.post{
       background:var(--card);border:1px solid rgba(0,0,0,.06);
       border-radius:var(--radius);
       box-shadow:var(--shadow-soft);
-      padding:22px 22px 18px;position:relative;overflow:hidden;
+      padding:22px 22px 18px;
     }
     .post__header{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
-    .post__title{
-      margin:0 0 6px;font-size: clamp(1.05rem, 2.2vw, 1.35rem);line-height:1.25;letter-spacing:.2px;
-    }
+    .post__title{margin:0 0 6px;font-size: clamp(1.05rem, 2.2vw, 1.35rem);}
     .post__date{
       flex:0 0 auto;white-space:nowrap;
       font-size:.9rem;color:var(--muted);
@@ -111,26 +74,18 @@
       background: rgba(11,114,231,.05);
     }
     .post__body{margin-top:8px;color:var(--ink)}
-    .post hr{
-      border:0;border-top:1px dashed rgba(0,0,0,.12);margin:16px 0;
-    }
     ul.clean{margin:10px 0 0 1.2rem}
     .post a.btn{
       display:inline-block;margin-top:10px;padding:10px 14px;border-radius:12px;font-weight:600;
       background:rgba(11,114,231,.1);border:1px solid rgba(11,114,231,.25);text-decoration:none;
     }
     .post a.btn:hover{box-shadow:var(--ring)}
-    /* Footer */
-    footer{
-      margin-top:34px;color:var(--muted);font-size:.95rem;text-align:center;
-    }
+    footer{margin-top:34px;color:var(--muted);font-size:.95rem;text-align:center;}
     .footer-card{
       margin-top:12px;background:var(--card);
       border:1px solid rgba(0,0,0,.06);border-radius:14px;padding:14px;display:inline-block;
       box-shadow:var(--shadow-soft)
     }
-    /* Focus styles */
-    :focus-visible{outline:none;box-shadow:var(--ring);border-radius:10px}
   </style>
 </head>
 <body>
@@ -148,20 +103,16 @@
       </nav>
     </header>
 
-    <section class="hero" role="region" aria-labelledby="hero-title">
-      <h1 id="hero-title">LiveGood Blog</h1>
+    <section class="hero">
+      <h1>LiveGood Blog</h1>
       <p>Updates, health tips, and little experiments in feeling better without overcomplicating it.</p>
-      <div class="meta-row">
-        <span class="chip">New</span>
-        <span>Welcome to the Blog</span>
-      </div>
     </section>
 
     <main class="posts" role="main">
       <!-- Post: Welcome -->
-      <article class="post" aria-labelledby="p-welcome-title">
+      <article class="post">
         <div class="post__header">
-          <h2 id="p-welcome-title" class="post__title">Welcome to the Blog</h2>
+          <h2 class="post__title">Welcome to the Blog</h2>
           <time class="post__date" datetime="2025-09-27">September 27, 2025</time>
         </div>
         <div class="post__body">
@@ -170,9 +121,9 @@
       </article>
 
       <!-- Post: Energy Tips -->
-      <article class="post" aria-labelledby="p-energy-title">
+      <article class="post">
         <div class="post__header">
-          <h2 id="p-energy-title" class="post__title">3 Simple Ways to Boost Daily Energy</h2>
+          <h2 class="post__title">3 Simple Ways to Boost Daily Energy</h2>
           <time class="post__date" datetime="2025-09-28">September 28, 2025</time>
         </div>
         <div class="post__body">
@@ -182,13 +133,45 @@
             <li><strong>Take short walks</strong> — movement wakes your body up.</li>
             <li><strong>Prioritize sleep</strong> — consistency matters more than hours.</li>
           </ul>
-          <hr />
-          <a class="btn" href="#">Read more</a>
+        </div>
+      </article>
+
+      <!-- Post: Collagen Peptides -->
+      <article class="post">
+        <div class="post__header">
+          <h2 class="post__title">Why Collagen Peptides Could Be the Daily Boost You’ve Been Missing</h2>
+          <time class="post__date" datetime="2025-09-29">September 29, 2025</time>
+        </div>
+        <div class="post__body">
+          <p>If you’ve noticed your skin looking a little tired, or your joints feeling the years more than you’d like, you’re not alone. Collagen is the protein that holds much of our body together—skin, hair, nails, bones, and joints all depend on it. LiveGood’s <strong>Collagen Peptides</strong> are designed to replenish what time naturally takes away.</p>
+
+          <h3>What Makes This Collagen Different?</h3>
+          <ul class="clean">
+            <li>Sourced for purity and quality</li>
+            <li>Mixes easily in hot or cold drinks without clumping</li>
+            <li>Supports joint comfort, skin elasticity, and healthy hair growth</li>
+          </ul>
+
+          <h3>What People Are Saying</h3>
+          <blockquote>
+            <p>“After just a few weeks, I can feel the difference in my knees. Walking is easier again.”</p>
+          </blockquote>
+          <blockquote>
+            <p>“My skin feels firmer, and even my hairdresser noticed new growth.”</p>
+          </blockquote>
+          <blockquote>
+            <p>“I love how it dissolves in my morning coffee—no weird taste at all.”</p>
+          </blockquote>
+
+          <h3>How to Use</h3>
+          <p>Add one scoop to your favorite drink—coffee, smoothies, even plain water. It’s flavorless, so you won’t have to mask it with anything extra.</p>
+
+          <a class="btn" href="https://www.shoplivegood.com/collagenPeptides" target="_blank" rel="noopener">Buy Now</a>
         </div>
       </article>
     </main>
 
-    <footer role="contentinfo">
+    <footer>
       <div class="footer-card">© 2025 LiveGood. All rights reserved.</div>
     </footer>
   </div>
