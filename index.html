@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LiveGood Landing Page</title>
 
-  <!-- Inline styles so the new box is guaranteed to show -->
   <style>
     :root {
-      --brand: #0ea5e9;         /* sky blue */
+      --brand: #0ea5e9;
       --brand-dark: #0369a1;
       --bg: #f4f4f4;
-      --text: #333;
+      --text: #111827;
+      --muted: #6b7280;
       --white: #fff;
       --shadow: 0 10px 20px rgba(0,0,0,.08);
       --radius: 16px;
+      --amber: #f59e0b;
     }
-
     * { box-sizing: border-box; }
     html, body {
       margin: 0; padding: 0;
@@ -25,40 +25,42 @@
       background: var(--bg);
       line-height: 1.6;
     }
-
     a { color: var(--brand-dark); text-decoration: none; }
     img { max-width: 100%; height: auto; display: block; }
 
-    .container {
-      width: min(1100px, 92vw);
-      margin: 0 auto;
-      padding: 24px 0;
-    }
+    .container { width: min(1200px, 94vw); margin: 0 auto; padding: 24px 0; }
 
     header {
       background: linear-gradient(0deg, #e6f4ff, #ffffff);
       border-bottom: 1px solid #e5e7eb;
     }
-    header .brand {
-      display: flex; align-items: center; gap: 12px;
-      padding: 18px 0;
+    header .brand { display: flex; align-items: center; gap: 12px; padding: 18px 0; }
+    header .brand h1 { margin: 0; font-size: 24px; letter-spacing: .2px; }
+
+    /* Layout: sidebar + main */
+    .grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 20px;
+      align-items: start;
     }
-    header .brand h1 {
-      margin: 0; font-size: 24px; letter-spacing: .2px;
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
     }
 
-    /* Example existing main content */
-    main { padding: 12px 0 0; }
-    .hero {
+    .card {
       background: var(--white);
       border: 1px solid #e5e7eb;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 28px;
+      padding: 20px;
     }
-    .hero h2 { margin: 0 0 10px; font-size: 28px; }
-    .hero p { margin: 0 0 16px; }
-    .hero .cta {
+
+    /* Hero */
+    .hero { margin-bottom: 20px; }
+    .hero h2 { margin: 0 0 8px; font-size: 28px; }
+    .hero p { margin: 0 0 16px; color: var(--muted); }
+    .cta {
       display: inline-block;
       background: var(--brand);
       color: #fff;
@@ -66,16 +68,39 @@
       border-radius: 10px;
       font-weight: bold;
     }
-    .spacer { height: 24px; }
+    .cta:hover { background: var(--brand-dark); }
 
-    /* >>> NEW BOX SECTION (this is what you asked to add) <<< */
-    #new-box-section {
-      margin: 28px 0 0;
+    /* Sidebar */
+    .sidebar .box-btn {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      font-weight: 600;
+      cursor: pointer;
     }
+    .sidebar .box-btn:hover { border-color: var(--brand); }
+
+    /* Main content area */
+    .main-area .section-title { margin: 0 0 12px; font-size: 22px; }
+    .placeholder {
+      border: 2px dashed #e5e7eb;
+      border-radius: 12px;
+      padding: 24px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* NEW box above footer */
+    #new-box-section { margin: 28px 0 0; }
     .new-box {
       position: relative;
-      background: #fff8e6;                 /* warm light background so it pops */
-      border: 2px dashed #f59e0b;          /* amber dashed border for visibility */
+      background: #fff8e6;
+      border: 2px dashed var(--amber);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 24px;
@@ -83,109 +108,190 @@
     }
     .new-box::after {
       content: "NEW";
-      position: absolute;
-      top: 12px; right: -24px;
-      background: #f59e0b;
-      color: #ffffff;
-      font-weight: bold;
+      position: absolute; top: 12px; right: -24px;
+      background: var(--amber); color: #fff; font-weight: bold;
       transform: rotate(15deg);
-      padding: 6px 28px;
-      border-radius: 999px;
+      padding: 6px 28px; border-radius: 999px;
       box-shadow: 0 6px 14px rgba(0,0,0,.12);
       letter-spacing: .5px;
     }
-    .new-box h3 {
-      margin: 0 0 8px;
-      font-size: 22px;
-    }
-    .new-box p {
-      margin: 0 0 14px;
-    }
-    .new-box .actions {
-      display: flex; flex-wrap: wrap; gap: 10px;
-    }
+    .new-box h3 { margin: 0 0 8px; font-size: 22px; }
+    .new-box p { margin: 0 0 14px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
     .btn {
-      display: inline-block;
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-weight: 600;
-      border: 1px solid #d1d5db;
-      background: #ffffff;
+      display: inline-block; padding: 10px 14px; border-radius: 10px;
+      font-weight: 600; border: 1px solid #d1d5db; background: #ffffff;
     }
-    .btn-primary {
-      background: var(--brand);
-      border-color: var(--brand);
-      color: #fff;
-    }
+    .btn-primary { background: var(--brand); border-color: var(--brand); color: #fff; }
     .btn-primary:hover { background: var(--brand-dark); }
 
-    footer {
-      margin-top: 36px;
-      background: #111827;
-      color: #d1d5db;
-      padding: 24px 0;
-      text-align: center;
+    /* Modal */
+    .modal-backdrop {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.5);
+      display: none;
+      align-items: center; justify-content: center;
+      padding: 20px; z-index: 50;
     }
-    footer p { margin: 0; font-size: 14px; }
+    .modal {
+      background: #ffffff; width: min(900px, 95vw);
+      border-radius: 14px; box-shadow: var(--shadow); overflow: hidden;
+    }
+    .modal header {
+      background: #f3f4f6;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 12px 16px;
+    }
+    .modal header h4 { margin: 0; font-size: 18px; }
+    .modal .content { padding: 16px; }
+    .modal .actions { padding: 12px 16px 16px; display: flex; justify-content: flex-end; }
+    .close {
+      background: #111827; color: #fff; border: none; border-radius: 8px; padding: 8px 12px; cursor: pointer;
+    }
   </style>
 </head>
-
 <body>
   <header>
     <div class="container">
       <div class="brand">
-        <!-- Optional logo -->
-        <!-- <img src="logo.png" alt="LiveGood" width="40" height="40"/> -->
         <h1>LiveGood</h1>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <!-- ===== Example existing content (keep yours) ===== -->
-    <section class="hero">
+    <!-- HERO -->
+    <section class="card hero">
       <h2>Wellness That Doesn’t Break the Bank</h2>
-      <p>Shop LiveGood’s full line of wellness essentials—greens & reds powders, coffee, multis, D3–K2, magnesium,
+      <p>Shop LiveGood’s full line of wellness essentials—greens &amp; reds powders, coffee, multis, D3–K2, magnesium,
         collagen, aminos, probiotics, CBD, black seed oil, skin care, and more.</p>
       <a class="cta" href="#new-box-section">See What’s New</a>
     </section>
 
-    <div class="spacer"></div>
+    <!-- LAYOUT -->
+    <section class="grid">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <button class="box-btn" data-modal="report">Free Health Report</button>
+        <button class="box-btn" data-modal="join">Join as Member</button>
+        <button class="box-btn" data-modal="shop">Shop Products</button>
+        <button class="box-btn" data-modal="contact">Contact / Text</button>
+      </aside>
 
-    <!-- ===== YOUR OTHER SECTIONS WOULD BE HERE
-         (videos, product grids, left-side boxes, etc.) ===== -->
+      <!-- MAIN AREA -->
+      <div class="main-area">
+        <div class="card">
+          <h3 class="section-title">Featured Videos</h3>
+          <div class="placeholder">
+            Drop your embed here (YouTube/Vimeo). For example:<br><br>
+            <code>&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</code>
+          </div>
+        </div>
 
-    <!-- ===== >>> NEW BOX ADDED HERE (before the footer) <<< ===== -->
-    <section id="new-box-section" aria-labelledby="new-box-title">
-      <div class="new-box">
-        <h3 id="new-box-title">Limited-Time Wellness Starter Box</h3>
-        <p>
-          Fresh drop. A simple bundle to kick things off—our best-sellers with member pricing,
-          quick tips, and a 14-day check-in. Ships free this week.
-        </p>
-        <ul style="margin: 0 0 16px 18px;">
-          <li>Daily Essentials mini-pack</li>
-          <li>Quickstart guide (PDF)</li>
-          <li>Member-only discount code inside</li>
-        </ul>
-        <div class="actions">
-          <a class="btn btn-primary" href="#">Get the Starter Box</a>
-          <a class="btn" href="#">Learn More</a>
+        <div id="new-box-section" class="card" style="margin-top:20px;">
+          <div class="new-box">
+            <h3 id="new-box-title">Limited-Time Wellness Starter Box</h3>
+            <p>
+              Fresh drop. A simple bundle to kick things off—our best-sellers with member pricing,
+              quick tips, and a 14-day check-in. Ships free this week.
+            </p>
+            <ul style="margin: 0 0 16px 18px;">
+              <li>Daily Essentials mini-pack</li>
+              <li>Quickstart guide (PDF)</li>
+              <li>Member-only discount code inside</li>
+            </ul>
+            <div class="actions">
+              <a class="btn btn-primary" href="#">Get the Starter Box</a>
+              <a class="btn" href="#">Learn More</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <!-- ===== End NEW BOX ===== -->
   </main>
 
-  <footer>
+  <!-- FOOTER -->
+  <footer style="margin-top: 36px; background:#111827; color:#d1d5db; padding: 24px 0; text-align:center;">
     <div class="container">
       <p>&copy; 2025 LiveGood. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Optional sanity check to confirm the page loaded -->
+  <!-- MODALS -->
+  <div class="modal-backdrop" id="modal-report" aria-hidden="true">
+    <div class="modal" role="dialog" aria-labelledby="modal-report-title" aria-modal="true">
+      <header><h4 id="modal-report-title">Free Health Report</h4></header>
+      <div class="content">
+        <img src="health-bg.jpg" alt="Health background" />
+        <p style="margin-top:12px; color:#4b5563;">
+          Get your personalized health report. We’ll send simple, actionable suggestions based on your goals.
+        </p>
+      </div>
+      <div class="actions"><button class="close" data-close>Close</button></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modal-join" aria-hidden="true">
+    <div class="modal" role="dialog" aria-labelledby="modal-join-title" aria-modal="true">
+      <header><h4 id="modal-join-title">Join as Member</h4></header>
+      <div class="content">
+        <p>Members get wholesale pricing (monthly or annual). It takes two minutes to join.</p>
+      </div>
+      <div class="actions"><button class="close" data-close>Close</button></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modal-shop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-labelledby="modal-shop-title" aria-modal="true">
+      <header><h4 id="modal-shop-title">Shop Products</h4></header>
+      <div class="content">
+        <p>Browse categories: Weight Management, Immune, Gut, Energy, Sleep, Skin Care, Sports Performance, Pet Health, and more.</p>
+      </div>
+      <div class="actions"><button class="close" data-close>Close</button></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modal-contact" aria-hidden="true">
+    <div class="modal" role="dialog" aria-labelledby="modal-contact-title" aria-modal="true">
+      <header><h4 id="modal-contact-title">Contact / Text</h4></header>
+      <div class="content">
+        <p>Text or call: <strong>(854) 855-0747</strong></p>
+      </div>
+      <div class="actions"><button class="close" data-close>Close</button></div>
+    </div>
+  </div>
+
   <script>
-    console.log("Page loaded. New box section mounted:", !!document.getElementById("new-box-section"));
+    // Sidebar -> Modal wiring
+    const openers = document.querySelectorAll('.box-btn');
+    const modals = {
+      report: document.getElementById('modal-report'),
+      join: document.getElementById('modal-join'),
+      shop: document.getElementById('modal-shop'),
+      contact: document.getElementById('modal-contact')
+    };
+    openers.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-modal');
+        const m = modals[key];
+        if (m) { m.style.display = 'flex'; m.setAttribute('aria-hidden','false'); }
+      });
+    });
+    document.querySelectorAll('[data-close]').forEach(c => {
+      c.addEventListener('click', () => {
+        const backdrop = c.closest('.modal-backdrop');
+        backdrop.style.display = 'none';
+        backdrop.setAttribute('aria-hidden','true');
+      });
+    });
+    // Close modal on backdrop click
+    document.querySelectorAll('.modal-backdrop').forEach(b => {
+      b.addEventListener('click', (e) => {
+        if (e.target === b) { b.style.display = 'none'; b.setAttribute('aria-hidden','true'); }
+      });
+    });
+
+    console.log("Page loaded. Sidebar + modals wired.");
   </script>
 </body>
 </html>
