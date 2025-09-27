@@ -156,10 +156,13 @@ section.photo-card:hover { box-shadow: var(--shadow-hover); transform: translate
 }
 
 footer {
-  text-align:center; padding: 22px 10px; background:#1f2937; color:#fff;
+  text-align:center; 
+  padding: 22px 10px; 
+  background:none; 
+  color:#333;
   margin-left: calc(var(--sidebar-width) + var(--sidebar-gap));
 }
-footer a { color:#fff; text-decoration: underline; }
+footer a { color:#333; text-decoration: underline; }
 
 /* ===== Small-screen tweaks ===== */
 @media (max-width: 720px) {
@@ -169,3 +172,4 @@ footer a { color:#fff; text-decoration: underline; }
   nav.side-nav ul { flex-direction: row; flex-wrap: wrap; gap: 8px; }
   nav.side-nav a { font-size: .92rem; padding: 9px 12px; border-radius: 9px; }
 }
+
