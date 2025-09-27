@@ -1,192 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LiveGood Landing Page</title>
-
-  <!-- Inline styles so the new box is guaranteed to show -->
+  <meta charset="UTF-8">
+  <title>Style Sanity Check</title>
   <style>
-    :root {
-      --brand: #0ea5e9;         /* sky blue */
-      --brand-dark: #0369a1;
-      --bg: #f4f4f4;
-      --text: #333;
-      --white: #fff;
-      --shadow: 0 10px 20px rgba(0,0,0,.08);
-      --radius: 16px;
+    body { margin:0; font-family: Arial, sans-serif; background:#111; color:#fff; }
+    .bigbox {
+      margin: 10vh auto; max-width: 800px; padding: 40px;
+      background:#fff; color:#111; border:6px solid #0ea5e9; border-radius:16px;
+      font-size: 28px; text-align:center; line-height:1.3;
+      box-shadow: 0 10px 30px rgba(0,0,0,.3);
     }
-
-    * { box-sizing: border-box; }
-    html, body {
-      margin: 0; padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.6;
-    }
-
-    a { color: var(--brand-dark); text-decoration: none; }
-    img { max-width: 100%; height: auto; display: block; }
-
-    .container {
-      width: min(1100px, 92vw);
-      margin: 0 auto;
-      padding: 24px 0;
-    }
-
-    header {
-      background: linear-gradient(0deg, #e6f4ff, #ffffff);
-      border-bottom: 1px solid #e5e7eb;
-    }
-    header .brand {
-      display: flex; align-items: center; gap: 12px;
-      padding: 18px 0;
-    }
-    header .brand h1 {
-      margin: 0; font-size: 24px; letter-spacing: .2px;
-    }
-
-    /* Example existing main content */
-    main { padding: 12px 0 0; }
-    .hero {
-      background: var(--white);
-      border: 1px solid #e5e7eb;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 28px;
-    }
-    .hero h2 { margin: 0 0 10px; font-size: 28px; }
-    .hero p { margin: 0 0 16px; }
-    .hero .cta {
-      display: inline-block;
-      background: var(--brand);
-      color: #fff;
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-weight: bold;
-    }
-    .spacer { height: 24px; }
-
-    /* >>> NEW BOX SECTION (this is what you asked to add) <<< */
-    #new-box-section {
-      margin: 28px 0 0;
-    }
-    .new-box {
-      position: relative;
-      background: #fff8e6;                 /* warm light background so it pops */
-      border: 2px dashed #f59e0b;          /* amber dashed border for visibility */
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 24px;
-      overflow: hidden;
-    }
-    .new-box::after {
-      content: "NEW";
-      position: absolute;
-      top: 12px; right: -24px;
-      background: #f59e0b;
-      color: #ffffff;
-      font-weight: bold;
-      transform: rotate(15deg);
-      padding: 6px 28px;
-      border-radius: 999px;
-      box-shadow: 0 6px 14px rgba(0,0,0,.12);
-      letter-spacing: .5px;
-    }
-    .new-box h3 {
-      margin: 0 0 8px;
-      font-size: 22px;
-    }
-    .new-box p {
-      margin: 0 0 14px;
-    }
-    .new-box .actions {
-      display: flex; flex-wrap: wrap; gap: 10px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-weight: 600;
-      border: 1px solid #d1d5db;
-      background: #ffffff;
-    }
-    .btn-primary {
-      background: var(--brand);
-      border-color: var(--brand);
-      color: #fff;
-    }
-    .btn-primary:hover { background: var(--brand-dark); }
-
-    footer {
-      margin-top: 36px;
-      background: #111827;
-      color: #d1d5db;
-      padding: 24px 0;
-      text-align: center;
-    }
-    footer p { margin: 0; font-size: 14px; }
+    .small { font-size:16px; margin-top:12px; opacity:.8; }
   </style>
 </head>
-
 <body>
-  <header>
-    <div class="container">
-      <div class="brand">
-        <!-- Optional logo -->
-        <!-- <img src="logo.png" alt="LiveGood" width="40" height="40"/> -->
-        <h1>LiveGood</h1>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-    <!-- ===== Example existing content (keep yours) ===== -->
-    <section class="hero">
-      <h2>Wellness That Doesn’t Break the Bank</h2>
-      <p>Shop LiveGood’s full line of wellness essentials—greens & reds powders, coffee, multis, D3–K2, magnesium,
-        collagen, aminos, probiotics, CBD, black seed oil, skin care, and more.</p>
-      <a class="cta" href="#new-box-section">See What’s New</a>
-    </section>
-
-    <div class="spacer"></div>
-
-    <!-- ===== YOUR OTHER SECTIONS WOULD BE HERE
-         (videos, product grids, left-side boxes, etc.) ===== -->
-
-    <!-- ===== >>> NEW BOX ADDED HERE (before the footer) <<< ===== -->
-    <section id="new-box-section" aria-labelledby="new-box-title">
-      <div class="new-box">
-        <h3 id="new-box-title">Limited-Time Wellness Starter Box</h3>
-        <p>
-          Fresh drop. A simple bundle to kick things off—our best-sellers with member pricing,
-          quick tips, and a 14-day check-in. Ships free this week.
-        </p>
-        <ul style="margin: 0 0 16px 18px;">
-          <li>Daily Essentials mini-pack</li>
-          <li>Quickstart guide (PDF)</li>
-          <li>Member-only discount code inside</li>
-        </ul>
-        <div class="actions">
-          <a class="btn btn-primary" href="#">Get the Starter Box</a>
-          <a class="btn" href="#">Learn More</a>
-        </div>
-      </div>
-    </section>
-    <!-- ===== End NEW BOX ===== -->
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 LiveGood. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- Optional sanity check to confirm the page loaded -->
-  <script>
-    // If you want a console confirmation while testing:
-    console.log("Page loaded. New box section mounted:", !!document.getElementById("new-box-section"));
-  </script>
+  <div class="bigbox">
+    TEST OK — Styles are working.
+    <div class="small">If you don’t see a big white box on a dark page, CSS isn’t being applied.</div>
+  </div>
 </body>
 </html>
