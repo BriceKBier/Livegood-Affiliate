@@ -1,196 +1,216 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LiveGood Blog</title>
-  <meta name="description" content="Updates, health tips, and ways to get the most out of LiveGood." />
-  <style>
-    :root{
-      --bg:#f6f8fb;
-      --card:#ffffff;
-      --ink:#222533;
-      --muted:#5b6470;
-      --brand:#0b72e7;
-      --brand-ink:#0a5cc0;
-      --ring: 0 0 0 3px rgba(11,114,231,0.18);
-      --radius:16px;
-      --shadow:0 12px 28px rgba(16,24,40,0.12);
-      --shadow-soft:0 6px 16px rgba(16,24,40,0.08);
-      --max: 980px;
-    }
-    @media (prefers-color-scheme: dark){
-      :root{
-        --bg:#0c111a;
-        --card:#0f1522;
-        --ink:#e7e9ee;
-        --muted:#9aa3b2;
-        --brand:#77aaff;
-        --brand-ink:#98baff;
-        --shadow:0 10px 26px rgba(0,0,0,0.55);
-        --shadow-soft:0 6px 16px rgba(0,0,0,0.45);
-      }
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      color:var(--ink);
-      background: radial-gradient(1200px 600px at 50% -200px, rgba(11,114,231,0.06), transparent 60%) , var(--bg);
-      line-height:1.6;
-    }
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:var(--max);margin:0 auto;padding:28px 20px 80px}
-    header.site{
-      display:flex;align-items:center;justify-content:space-between;gap:16px;
-      padding:12px 0 22px;
-    }
-    .logo{
-      display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.1rem;letter-spacing:.2px;
-    }
-    .logo__mark{
-      width:34px;height:34px;display:grid;place-items:center;border-radius:10px;
-      background: conic-gradient(from 200deg, rgba(11,114,231,.18), rgba(11,114,231,.32));
-      box-shadow: var(--shadow-soft);
-      border:1px solid rgba(11,114,231,.18);
-      position:relative;overflow:hidden;
-    }
-    .logo__mark::after{
-      content:"";position:absolute;inset:4px;border-radius:7px;
-      background:linear-gradient(180deg, rgba(255,255,255,.65), rgba(255,255,255,0));
-      mix-blend:overlay;opacity:.6;
-    }
-    nav ul{display:flex;gap:14px;margin:0;padding:0;list-style:none}
-    nav a{
-      display:inline-block;padding:8px 12px;border-radius:10px;
-    }
-    nav a[aria-current="page"]{
-      background:rgba(11,114,231,.08);color:var(--brand-ink);font-weight:600;border:1px solid rgba(11,114,231,.15);
-    }
-    /* Hero */
-    .hero{
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,0)) , var(--card);
-      box-shadow: var(--shadow);
-      padding:28px;
-      position:relative;
-      overflow:hidden;
-    }
-    .hero::before{
-      content:"";position:absolute;inset:auto -40px -60px -40px;height:140px;border-radius:100%;
-      background:radial-gradient(450px 120px at 50% 0, rgba(11,114,231,.08), transparent 70%);
-      pointer-events:none;
-    }
-    .hero h1{margin:0 0 6px;font-size: clamp(1.4rem, 2.8vw, 2rem);line-height:1.2}
-    .hero p{margin:6px 0 0;color:var(--muted)}
-    .meta-row{
-      display:flex;align-items:center;gap:14px;color:var(--muted);font-size:.95rem;margin-top:14px;
-    }
-    .chip{
-      padding:6px 10px;border-radius:999px;background:rgba(11,114,231,.08);border:1px solid rgba(11,114,231,.15);
-      color:var(--brand-ink);font-weight:600;font-size:.85rem;
-    }
-
-    /* Posts */
-    .posts{display:grid;gap:18px;margin-top:28px}
-    article.post{
-      background:var(--card);border:1px solid rgba(0,0,0,.06);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow-soft);
-      padding:22px 22px 18px;position:relative;overflow:hidden;
-    }
-    .post__header{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
-    .post__title{
-      margin:0 0 6px;font-size: clamp(1.05rem, 2.2vw, 1.35rem);line-height:1.25;letter-spacing:.2px;
-    }
-    .post__date{
-      flex:0 0 auto;white-space:nowrap;
-      font-size:.9rem;color:var(--muted);
-      padding:6px 10px;border-radius:10px;border:1px dashed rgba(11,114,231,.25);
-      background: rgba(11,114,231,.05);
-    }
-    .post__body{margin-top:8px;color:var(--ink)}
-    .post hr{
-      border:0;border-top:1px dashed rgba(0,0,0,.12);margin:16px 0;
-    }
-    ul.clean{margin:10px 0 0 1.2rem}
-    .post a.btn{
-      display:inline-block;margin-top:10px;padding:10px 14px;border-radius:12px;font-weight:600;
-      background:rgba(11,114,231,.1);border:1px solid rgba(11,114,231,.25);text-decoration:none;
-    }
-    .post a.btn:hover{box-shadow:var(--ring)}
-    /* Footer */
-    footer{
-      margin-top:34px;color:var(--muted);font-size:.95rem;text-align:center;
-    }
-    .footer-card{
-      margin-top:12px;background:var(--card);
-      border:1px solid rgba(0,0,0,.06);border-radius:14px;padding:14px;display:inline-block;
-      box-shadow:var(--shadow-soft)
-    }
-    /* Focus styles */
-    :focus-visible{outline:none;box-shadow:var(--ring);border-radius:10px}
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LiveGood – Brice</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="wrap">
-    <header class="site" role="banner">
-      <div class="logo" aria-label="LiveGood">
-        <span class="logo__mark" aria-hidden="true"></span>
-        <span>LiveGood</span>
-      </div>
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="/" >Home</a></li>
-          <li><a href="#" aria-current="page">Blog</a></li>
-        </ul>
-      </nav>
-    </header>
 
-    <section class="hero" role="region" aria-labelledby="hero-title">
-      <h1 id="hero-title">LiveGood Blog</h1>
-      <p>Updates, health tips, and little experiments in feeling better without overcomplicating it.</p>
-      <div class="meta-row">
-        <span class="chip">New</span>
-        <span>Welcome to the Blog</span>
+<body>
+  <nav class="side-nav">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#quality">Quality</a></li>
+      <li><a href="#membership">Membership</a></li>
+      <li><a href="#power">Earn with LiveGood</a></li>
+      <li><a href="#retail">Retail Shop</a></li>
+      <li><a href="#detox">Detox</a></li>
+      <li><a href="https://www.MyFreeHealthReport.com/Brice" target="_blank">Free Health Report</a></li>
+      <li><a href="#weight">Weight Mgmt</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="https://allsolutionsnetwork.com/cgi-bin/d.cgi/BB68665/myhomepage.htm" target="_blank" rel="noopener">Income Solutions</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero"></header>
+
+  <div class="content">
+    <!-- ABOUT -->
+    <section id="about" class="photo-card" style="--bg: url('about-bg.jpg');">
+      <div class="inner">
+        <h2>About LiveGood</h2>
+        <p>LiveGood helps people stay healthy with advanced nutritional supplements made from pure, results-driven ingredients — at affordable, honest prices.</p>
+        <ul>
+          <li>High-quality ingredients</li>
+          <li>Affordable prices without markups</li>
+          <li>Wide range for immune, energy, gut, sleep, and more</li>
+        </ul>
+        <div class="card-actions">
+          <a class="btn" href="https://www.livegood.com/brice" target="_blank">Shop LiveGood</a>
+          <a class="btn" href="#videos">Watch Videos</a>
+        </div>
       </div>
     </section>
 
-    <main class="posts" role="main">
-      <!-- Post: Welcome -->
-      <article class="post" aria-labelledby="p-welcome-title">
-        <div class="post__header">
-          <h2 id="p-welcome-title" class="post__title">Welcome to the Blog</h2>
-          <time class="post__date" datetime="2025-09-27">September 27, 2025</time>
+    <!-- OUR QUALITY -->
+    <section id="quality" class="photo-card" style="--bg: url('quality-bg.jpg');">
+      <div class="inner">
+        <h2>Our Quality</h2>
+        <p>Manufactured in USA facilities that follow cGMP and NSF standards, with additional third-party testing on every batch.</p>
+        <p>Certificates of Analysis are published for transparency, verifying what’s inside and how it meets label claims.</p>
+        <p>We use premium raw materials, inspect every batch, and keep costs low by selling direct-to-consumer.</p>
+        <ul>
+          <li>cGMP / NSF-certified U.S. facilities</li>
+          <li>Certificates of Analysis available</li>
+          <li>Premium ingredients, direct pricing</li>
+        </ul>
+        <div class="card-actions">
+          <a class="btn" href="https://www.livegood.com/products" target="_blank">Browse Products</a>
+          <a class="btn" href="https://livegood.com/certificatesOfAnalysis" target="_blank">View Certificates</a>
         </div>
-        <div class="post__body">
-          <p>Thanks for checking out our site! This blog is where we’ll share updates, health tips, and ways to get the most out of LiveGood. Keep an eye out for new posts coming soon.</p>
-        </div>
-      </article>
+      </div>
+    </section>
 
-      <!-- Post: Energy Tips -->
-      <article class="post" aria-labelledby="p-energy-title">
-        <div class="post__header">
-          <h2 id="p-energy-title" class="post__title">3 Simple Ways to Boost Daily Energy</h2>
-          <time class="post__date" datetime="2025-09-28">September 28, 2025</time>
+    <!-- MEMBERSHIP -->
+    <section id="membership" class="photo-card" style="--bg: url('membership-bg.jpg');">
+      <div class="inner">
+        <h2>Membership</h2>
+        <p><strong>Become a LiveGood Member and Save.</strong> Get wholesale pricing on the entire product line with flexible monthly or yearly options.</p>
+        <ul>
+          <li><strong>Monthly:</strong> $9.95 per month</li>
+          <li><strong>Yearly:</strong> $99.95 per year (save ~20%)</li>
+          <li>Cancel anytime. Even one monthly purchase can offset your membership.</li>
+        </ul>
+        <p>There’s no limit to how many products you can buy at member pricing. Join today and start saving immediately.</p>
+        <div class="card-actions">
+          <a class="btn" href="https://www.livegood.com/membership" target="_blank">Join Now</a>
+          <a class="btn" href="#contact">Ask a Question</a>
         </div>
-        <div class="post__body">
-          <p>Feeling low on energy? Here are three easy habits you can start today:</p>
-          <ul class="clean">
-            <li><strong>Stay hydrated</strong> — drink water before coffee.</li>
-            <li><strong>Take short walks</strong> — movement wakes your body up.</li>
-            <li><strong>Prioritize sleep</strong> — consistency matters more than hours.</li>
-          </ul>
-          <hr />
-          <a class="btn" href="#">Read more</a>
-        </div>
-      </article>
-    </main>
+      </div>
+    </section>
 
-    <footer role="contentinfo">
-      <div class="footer-card">© 2025 LiveGood. All rights reserved.</div>
-    </footer>
+    <!-- EARN WITH LIVEGOOD -->
+    <section id="power" class="photo-card" style="--bg: url('power-bg.jpg');">
+      <div class="inner">
+        <h2>Earn with LiveGood</h2>
+        <p>Take a <strong>Free Tour</strong> of the company that’s breaking the mold — with life-changing products, a breakthrough marketing system, and a generous compensation plan.</p>
+        <ul>
+          <li>Reserve your position today — free, with no obligation.</li>
+          <li>“Most Powerful System in the Industry” to help you build fast.</li>
+          <li>Products that sell themselves + life-changing income potential.</li>
+        </ul>
+        <div class="card-actions">
+          <a class="btn" href="https://www.livegoodtour.com/Brice" target="_blank">Take the Free Tour</a>
+          <a class="btn" href="https://www.livegoodtour.com/Brice" target="_blank">Reserve My Position</a>
+          <a class="btn" href="#contact">Get Details</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- RETAIL SHOP -->
+    <section id="retail" class="photo-card" style="--bg: url('retail-bg.jpg');">
+      <div class="inner">
+        <h2>Retail Shop</h2>
+        <p>
+          Shop LiveGood’s full line of wellness essentials — greens and reds powders, organic coffee, multi-vitamins, D3–K2, magnesium, collagen, protein, aminos, probiotics, CBD, black seed oil, skin care, and more.
+        </p>
+        <ul>
+          <li><strong>Popular categories:</strong> Weight Management, Immune, Gut, Energy, Sleep, Skin Care, Sports Performance, Pet Health, and more.</li>
+          <li><strong>Value bundles:</strong> Daily Essentials, Foundational Five, Maximum Energy/Wellness, Ultimate Wellness/Weight Management, and Skin Care packs for built-in savings.</li>
+          <li><strong>Member savings:</strong> Members get wholesale pricing (just $9.95/mo or $99.95/yr).</li>
+          <li><strong>Peace of mind:</strong> 60-Day Money-Back Guarantee on all purchases.</li>
+        </ul>
+        <div class="card-actions">
+          <a class="btn" href="https://www.livegood.com/products" target="_blank" rel="noopener">Browse All Products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETOX -->
+    <section id="detox" class="photo-card" style="--bg: url('detox-bg.jpg');">
+      <div class="inner">
+        <h2>Detox</h2>
+        <p><strong>Chlorophyll &amp; Zeolite Detox</strong><br>
+          Support your body’s natural cleansing process and feel renewed from the inside out.
+        </p>
+        <ul>
+          <li>Binds and removes heavy metals &amp; pollutants</li>
+          <li>Supports energy, immune function, and gut balance</li>
+          <li>Gentle, non-harsh formula</li>
+        </ul>
+        <p><strong>How to Use</strong> — Take 2 full dropperfuls (~2 ml) under the tongue or in water, once or twice daily.</p>
+        <div class="card-actions">
+          <a class="btn" href="https://www.MyFreeDetox.com/Brice" target="_blank" rel="noopener">Learn More</a>
+          <a class="btn green" href="https://www.MyFreeDetox.com/Brice" target="_blank" rel="noopener">Get Your Free Bottle</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEIGHT -->
+    <section id="weight" class="photo-card" style="--bg: url('weight-bg.jpg');">
+      <div class="inner">
+        <h2>Weight Management</h2>
+        <p>Jump-Start Your Wellness Journey! Now offering sought-after <strong>prescription medications</strong> with a lowest-price guarantee.</p>
+
+        <h3>Semaglutide</h3>
+        <p>Lose up to 20% of your body weight.</p>
+        <div class="card-actions" style="margin-bottom:16px;">
+          <a class="btn" href="https://www.livegood.com/clinic/index?enroller=Brice" target="_blank" rel="noopener">See If You Qualify — $179</a>
+        </div>
+
+        <h3>Tirzepatide</h3>
+        <p>Clinically proven weight-loss medication.</p>
+        <div class="card-actions">
+          <a class="btn" href="https://www.livegood.com/clinic/index?enroller=Brice" target="_blank" rel="noopener">See If You Qualify — $279</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="photo-card" style="--bg: url('services-bg.jpg');">
+      <div class="inner">
+        <h2>Services</h2>
+        <p>Coaching, Q&amp;A, and support options tailored to your goals.</p>
+        <div class="card-actions">
+          <a class="btn" href="#contact">Book a Chat</a>
+          <a class="btn" href="#videos">See How It Works</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="photo-card" style="--bg: url('contact-bg.jpg');">
+      <div class="inner">
+        <h2>Contact LiveGood</h2>
+        <form class="contact-form" action="https://formspree.io/f/mwprpddg" method="POST">
+          <label>Your Name</label>
+          <input type="text" name="name" required>
+          <label>Your Email</label>
+          <input type="email" name="email" required>
+          <label>Message</label>
+          <textarea name="message" rows="5" required></textarea>
+          <label>Phone (optional)</label>
+          <input type="tel" name="phone">
+          <input type="text" name="_gotcha" style="display:none">
+          <div class="cta-row">
+            <button class="btn" type="submit">Send Message</button>
+          </div>
+        </form>
+        <div class="cta-row" style="margin-top:20px;">
+          <a href="sms:+18548550747" class="btn">📱 Text Me</a>
+          <a href="tel:+18548550747" class="btn">📞 Call Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section id="videos" class="photo-card" style="--bg: url('videos-bg.jpg');">
+      <div class="inner">
+        <h2>Featured Videos</h2>
+        <div class="video-grid">
+          <iframe src="https://www.livegoodtour.com/Brice" title="LiveGood Tour" allowfullscreen></iframe>
+          <iframe src="https://www.descubrelivegood.com/Brice" title="Descubre LiveGood" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
   </div>
+
+  <footer>
+    <p>&copy; 2025 LiveGood • Brice • <a href="tel:+18548550747">Call: (854) 855-0747</a></p>
+  </footer>
 </body>
 </html>
