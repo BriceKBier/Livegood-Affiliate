@@ -1,94 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="top">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LiveGood Blog</title>
   <style>
-    :root {
-      --max-card: 1100px;
-      --radius-card: 14px;
-      --shadow: 0 8px 24px rgba(0,0,0,0.14);
-      --shadow-hover: 0 12px 28px rgba(0,0,0,0.20);
-      --brand: #0077cc;
-      --brand-dark: #005fa3;
-      --muted: #5b6470;
+    :root{
+      --max-card:1100px; --radius-card:14px;
+      --shadow:0 8px 24px rgba(0,0,0,.14);
+      --shadow-hover:0 12px 28px rgba(0,0,0,.20);
+      --brand:#0077cc; --brand-dark:#005fa3;
+      --muted:#5b6470; --surface:#e9edf3; --text:#223;
     }
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background: #f6f8fb;
-      margin: 0;
-      color: #223;
-    }
-    header.topbar {
-      text-align: center;
-      padding: 28px 16px;
-      background: var(--brand);
-      color: #fff;
-    }
-    header.topbar h1 { margin: 0; font-size: 2rem; }
-    header.topbar nav { margin-top: 8px; }
-    header.topbar a { color:#fff; text-decoration:none; margin:0 10px; font-weight:600; }
-    main {
-      max-width: var(--max-card);
-      margin: 40px auto;
-      padding: 0 16px 40px;
-    }
-    .meta { color: var(--muted); font-size: 0.95rem; margin: 0 0 24px; }
-    .blog-list { display: grid; gap: 24px; }
-    .card {
-      background: #fff;
-      border-radius: var(--radius-card);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      transition: box-shadow .2s ease, transform .2s ease;
-    }
-    .card:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
-    .cover { display:block; width:100%; height:260px; object-fit:cover; }
-    .card-body { padding: 22px; }
-    .card-body h2 { margin: 0 0 6px; font-size: 1.4rem; }
-    .card-body h2 a { color: inherit; text-decoration: none; }
-    .row { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top: 14px; }
-    .btn {
-      display:inline-block; padding:10px 14px; border-radius:10px;
-      background: var(--brand); color:#fff; text-decoration:none; font-weight:600;
-    }
-    .btn:hover { background: var(--brand-dark); }
-    .tag { font-size:.85rem; background:#e9edf3; padding:6px 10px; border-radius:999px; color:#334; }
-    footer.site {
-      text-align: center;
-      padding: 20px 16px;
-      background: #e9edf3;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#f6f8fb;color:var(--text)}
+    a{color:inherit}
+    /* Top bar */
+    header.topbar{background:var(--brand);color:#fff;padding:24px 16px}
+    header.topbar .wrap{max-width:var(--max-card);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    header.topbar h1{margin:0;font-size:1.75rem}
+    header.topbar nav a{color:#fff;text-decoration:none;margin-left:16px;font-weight:600;opacity:.95}
+    header.topbar nav a[aria-current="page"]{text-decoration:underline}
+    /* Main layout */
+    main{max-width:var(--max-card);margin:40px auto;padding:0 16px 48px}
+    .meta{color:var(--muted);font-size:.95rem;margin:0 0 24px}
+    /* Cards list */
+    .blog-list{display:grid;gap:24px}
+    .card{background:#fff;border-radius:var(--radius-card);box-shadow:var(--shadow);overflow:hidden;transition:box-shadow .2s, transform .2s}
+    .card:hover{box-shadow:var(--shadow-hover);transform:translateY(-1px)}
+    .cover{display:block;width:100%;height:260px;object-fit:cover}
+    .card-body{padding:22px}
+    .card-body h2{margin:0 0 6px;font-size:1.35rem}
+    .tag{font-size:.85rem;background:#e9edf3;padding:6px 10px;border-radius:999px;color:#334}
+    .row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--brand);color:#fff;text-decoration:none;font-weight:600}
+    .btn:hover{background:var(--brand-dark)}
+    /* Full posts */
+    .posts{margin-top:44px}
+    .post{background:#fff;border-radius:var(--radius-card);box-shadow:var(--shadow);padding:28px;margin:28px 0}
+    .post header{margin-bottom:12px}
+    .post time{color:var(--muted);font-size:.9rem}
+    .back{display:inline-block;margin-top:12px}
+    /* Footer */
+    footer.site{background:var(--surface);color:var(--muted);text-align:center;padding:20px 16px;font-size:.9rem}
+    /* Anchor offset for sticky-ish jump comfort */
+    :target::before{content:"";display:block;height:70px;margin-top:-70px}
   </style>
 </head>
 <body>
 
   <!-- Top bar -->
   <header class="topbar">
-    <h1>LiveGood Blog</h1>
-    <nav>
-      <a href="index.html#about">About</a>
-      <a href="index.html#retail">Shop</a>
-      <a href="blog.html" aria-current="page">Blog</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
+    <div class="wrap">
+      <h1>LiveGood Blog</h1>
+      <nav>
+        <a href="index.html#about">About</a>
+        <a href="index.html#retail">Shop</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
     <p class="meta">Latest articles, product deep-dives, and member tips.</p>
 
+    <!-- ===== List of posts (cards) ===== -->
     <section class="blog-list">
 
-      <!-- POST: Collagen Peptides -->
+      <!-- Collagen -->
       <article class="card">
-        <a href="post-collagen-peptides.html" aria-label="Read: LiveGood Collagen Peptides">
-          <img class="cover" src="products1.jpg" alt="Collagen peptides on a kitchen counter">
+        <a href="#post-collagen" aria-label="Read: LiveGood Collagen Peptides">
+          <img class="cover" src="products1.jpg" alt="Collagen peptides on a kitchen counter"/>
         </a>
         <div class="card-body">
-          <h2><a href="post-collagen-peptides.html">Unlock Youth from the Inside Out — LiveGood Collagen Peptides</a></h2>
+          <h2><a href="#post-collagen" style="text-decoration:none;">Unlock Youth from the Inside Out — LiveGood Collagen Peptides</a></h2>
           <div class="meta">
             <time datetime="2025-09-30">September 30, 2025</time> • <span class="tag">Skin &amp; Joints</span>
           </div>
@@ -97,12 +83,120 @@
             LiveGood’s formula pairs hydrolyzed collagen (Types I &amp; III) with Velositol™, Polynol™, and ApresFlex™.
           </p>
           <div class="row">
-            <a class="btn" href="post-collagen-peptides.html">Read more</a>
+            <a class="btn" href="#post-collagen">Read more</a>
             <a href="index.html#retail">Shop Collagen</a>
           </div>
         </div>
       </article>
 
-      <!-- POST: Example #2 (rename href and image to your actual filename/image) -->
+      <!-- Example Post A — rename image/text if you like -->
       <article class="card">
-        <a href="post-daily-detox.html"
+        <a href="#post-detox" aria-label="Read: Daily Detox & Greens">
+          <img class="cover" src="DetoxSS.png" alt="Green detox smoothie and ingredients"/>
+        </a>
+        <div class="card-body">
+          <h2><a href="#post-detox" style="text-decoration:none;">Daily Detox &amp; Greens — Clean Fuel for Busy Days</a></h2>
+          <div class="meta">
+            <time datetime="2025-09-22">September 22, 2025</time> • <span class="tag">Energy</span>
+          </div>
+          <p>
+            What’s inside the greens blend, how it supports gut health and steady energy, plus easy ways to make it taste great.
+          </p>
+          <div class="row">
+            <a class="btn" href="#post-detox">Read more</a>
+            <a href="index.html#retail">Shop Greens</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Example Post B — rename image/text if you like -->
+      <article class="card">
+        <a href="#post-membership" aria-label="Read: Member Savings Guide">
+          <img class="cover" src="highest-quality-products.jpg" alt="Assorted LiveGood products on a table"/>
+        </a>
+        <div class="card-body">
+          <h2><a href="#post-membership" style="text-decoration:none;">Membership Math — How the Savings Add Up</a></h2>
+          <div class="meta">
+            <time datetime="2025-09-12">September 12, 2025</time> • <span class="tag">Member Tips</span>
+          </div>
+          <p>
+            Side-by-side pricing, where bundles save the most, and three items that often cover the monthly fee.
+          </p>
+          <div class="row">
+            <a class="btn" href="#post-membership">Read more</a>
+            <a href="index.html#membership">Join &amp; Save</a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ===== Full posts on same page (anchors) ===== -->
+    <section class="posts">
+
+      <!-- FULL: Collagen -->
+      <article id="post-collagen" class="post">
+        <header>
+          <h2>Unlock Youth from the Inside Out — LiveGood Collagen Peptides</h2>
+          <time datetime="2025-09-30">September 30, 2025</time>
+        </header>
+        <p>
+          Collagen is the scaffolding for skin, joints, hair, nails, and bones—but production slows with age.
+          <strong>LiveGood Collagen Peptides</strong> pairs hydrolyzed collagen (Types I &amp; III) with
+          Velositol™, Polynol™, and ApresFlex™ for a well-rounded formula aimed at
+          muscle recovery, joint comfort, and healthy-looking skin.
+        </p>
+        <ul>
+          <li><strong>Hydrolyzed Collagen I &amp; III</strong> — easy to absorb, supports skin elasticity and joint mobility.</li>
+          <li><strong>Velositol™</strong> — enhances muscle protein synthesis for better strength and recovery.</li>
+          <li><strong>Polynol™</strong> — plant-based antioxidant support.</li>
+          <li><strong>ApresFlex™</strong> — clinically studied for joint comfort and flexibility.</li>
+        </ul>
+        <p>Stir into coffee, smoothies, or shakes—simple daily habit, real foundation support.</p>
+        <p><a class="back" href="#top">↑ Back to top</a></p>
+      </article>
+
+      <!-- FULL: Detox (sample copy—edit as you like) -->
+      <article id="post-detox" class="post">
+        <header>
+          <h2>Daily Detox &amp; Greens — Clean Fuel for Busy Days</h2>
+          <time datetime="2025-09-22">September 22, 2025</time>
+        </header>
+        <p>
+          When life’s loud, your body whispers. This greens blend focuses on micronutrients and gentle detox support
+          to keep energy steady without the crash.
+        </p>
+        <ul>
+          <li><strong>Greens &amp; Antioxidants</strong> — phytonutrients that support cellular clean-up.</li>
+          <li><strong>Digestive Support</strong> — ingredients geared toward gut balance and comfort.</li>
+          <li><strong>Easy Mix</strong> — water, milk, or smoothie; add lemon or mint if you want it brighter.</li>
+        </ul>
+        <p><a class="back" href="#top">↑ Back to top</a></p>
+      </article>
+
+      <!-- FULL: Membership (sample copy—edit as you like) -->
+      <article id="post-membership" class="post">
+        <header>
+          <h2>Membership Math — How the Savings Add Up</h2>
+          <time datetime="2025-09-12">September 12, 2025</time>
+        </header>
+        <p>
+          Wholesale pricing is great on paper; here’s where it’s usually felt.
+          Bundles stack the savings, and a few staples can cover the monthly fee by themselves.
+        </p>
+        <ul>
+          <li><strong>Compare Side-by-Side</strong> — typical retail vs member price.</li>
+          <li><strong>Bundles</strong> — Daily Essentials and Foundational Five tend to be the best per-item value.</li>
+          <li><strong>Break-Even</strong> — many folks cross the line with three regular items a month.</li>
+        </ul>
+        <p><a class="back" href="#top">↑ Back to top</a></p>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="site">
+    <p>&copy; 2025 LiveGood. All rights reserved.</p>
+  </footer>
+</body>
+</html>
