@@ -4,7 +4,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://bricekbier.github.io/Livegood-Affiliate/</loc>
-    <lastmod>2025-09-29</lastmod>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,7 +12,7 @@
   <!-- Blog page -->
   <url>
     <loc>https://bricekbier.github.io/Livegood-Affiliate/blog.html</loc>
-    <lastmod>2025-09-29</lastmod>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -20,7 +20,7 @@
   <!-- Index file explicitly (same as homepage, but some bots like both) -->
   <url>
     <loc>https://bricekbier.github.io/Livegood-Affiliate/index.html</loc>
-    <lastmod>2025-09-29</lastmod>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
