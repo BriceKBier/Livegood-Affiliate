@@ -172,4 +172,67 @@ footer a { color:#333; text-decoration: underline; }
   nav.side-nav ul { flex-direction: row; flex-wrap: wrap; gap: 8px; }
   nav.side-nav a { font-size: .92rem; padding: 9px 12px; border-radius: 9px; }
 }
+/* Collagen blog visuals */
+.card {
+  background:#fff;
+  border:1px solid #e3e8f1;
+  border-radius:14px;
+  box-shadow:0 8px 24px rgba(0,0,0,.12);
+}
+
+.price-card {
+  background: #fff;
+  border: 1px solid #e3e8f1;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+
+.price-card .badge {
+  display:inline-block;
+  background: #256429;
+  color:#fff;
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:600;
+  font-size:.9rem;
+}
+
+.price-card .price-row {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:14px;
+  margin:12px 0 14px 0;
+}
+
+.price-card .big {
+  font-size:2rem;
+  font-weight:800;
+  line-height:1;
+}
+
+.price-card .retail {
+  font-size:1.3rem;
+  text-decoration: line-through;
+  opacity:.7;
+}
+
+.btn-primary, .btn-link {
+  display:block;
+  text-align:center;
+  padding:12px 14px;
+  border-radius:12px;
+  margin-top:10px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.btn-primary { background:#0077cc; color:#fff; }
+.btn-link { background:transparent; color:#5b6470; font-weight:600; }
+
+@media (max-width: 900px) {
+  #collagen-blog > div { grid-template-columns:1fr; }
+}
+
 
