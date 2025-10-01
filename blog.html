@@ -9,7 +9,7 @@
   <meta property="og:title" content="LiveGood Blog" />
   <meta property="og:description" content="Articles and product spotlights from LiveGood." />
   <meta property="og:type" content="article" />
-  <link rel="stylesheet" href="style.css?v=16" />
+  <link rel="stylesheet" href="style.css?v=17" />
 
   <style>
     .page {
@@ -20,18 +20,37 @@
       max-width: 800px;
       margin: 0 auto;
     }
-    .blog-banner {
-      text-align: center;
-      margin: 30px 0;
-    }
+
+    /* Keep original HealthTrader banner styled */
+    .blog-banner { text-align: center; margin: 30px 0; }
     .blog-banner img {
       border-radius: 10px;
       box-shadow: var(--shadow);
       max-width: 100%;
       height: auto;
     }
+
+    /* === ASN banner fixes: prevent crop/stretch ===
+       .photo-card sets background-size: cover globally, so we override here.
+    */
+    .photo-card.asn-banner {
+      /* show full image without stretching */
+      background-size: contain !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      /* fallback color behind transparent/letterboxed areas */
+      background-color: #0b2a3d; /* deep blue/green that matches the graphic */
+      min-height: 300px; /* enough room for the image + text */
+    }
+    /* Slightly stronger overlay only for this card so text is crisp on busy art */
+    .photo-card.asn-banner .inner {
+      background: rgba(0,0,0,0.65);
+      text-align: center;
+    }
+
     @media (max-width: 768px) {
       .page { margin-left: 0; }
+      .photo-card.asn-banner { min-height: 260px; }
     }
   </style>
 </head>
@@ -103,9 +122,9 @@
         </a>
       </div>
 
-      <!-- === AllSolutionsNetwork Banner (custom card with your new background) === -->
-      <article class="photo-card" style="--bg: url('88af0861-78c7-4abc-a316-8d4f5bdca8fc.png');">
-        <div class="inner" style="text-align:center;">
+      <!-- === AllSolutionsNetwork Banner (custom card, NO cropping) === -->
+      <article class="photo-card asn-banner" style="--bg: url('88af0861-78c7-4abc-a316-8d4f5bdca8fc.png');">
+        <div class="inner">
           <h2 style="margin-bottom:12px;">Want to Earn Extra Income?</h2>
           <p style="margin-bottom:20px;">
             Discover AllSolutionsNetwork’s proven system to build a business online.<br>
