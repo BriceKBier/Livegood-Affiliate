@@ -15,7 +15,6 @@ html { scroll-behavior: smooth; }
   --text: #223;
   --muted: #5b6470;
   --surface: #e9edf3;
-  /* per-card overlay default (can be overridden via --overlay) */
   --overlay-default: rgba(0,0,0,0.55);
 }
 
@@ -29,7 +28,7 @@ body {
   color: var(--text);
 }
 
-/* ===== Global Buttons (anchors + button elements) ===== */
+/* ===== Buttons ===== */
 .btn,
 button.btn,
 a.btn {
@@ -46,19 +45,9 @@ a.btn {
   transition: transform .06s ease, background .15s ease, box-shadow .15s ease;
   box-shadow: var(--shadow);
 }
-.btn:hover,
-button.btn:hover,
-a.btn:hover {
-  background: var(--brand-dark);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-hover);
-}
+.btn:hover { background: var(--brand-dark); transform: translateY(-1px); box-shadow: var(--shadow-hover); }
 .btn.green { background: var(--success); }
 .btn.green:hover { background: var(--success-dark); }
-.btn:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
-}
 
 /* ===== Sidebar ===== */
 .side-nav {
@@ -72,8 +61,6 @@ a.btn:hover {
   z-index: 20;
 }
 .side-nav ul { list-style: none; padding: 0; margin: 0; }
-
-/* Make ALL sidebar links blue buttons */
 .side-nav a {
   display: block;
   padding: 10px 12px;
@@ -84,19 +71,13 @@ a.btn:hover {
   background: var(--brand);
   color: #fff !important;
   box-shadow: var(--shadow);
-  transition: transform .06s ease, background .15s ease, box-shadow .15s ease;
 }
-.side-nav a:hover {
-  background: var(--brand-dark);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-hover);
-}
+.side-nav a:hover { background: var(--brand-dark); }
 
-/* ===== Hero (anchored at top so it doesn't crop) ===== */
+/* ===== Hero ===== */
 .hero {
-  position: relative;
   margin-left: var(--sidebar-width);
-  height: 400px; /* adjust as needed */
+  height: 400px;
   background: url('banner.jpg') no-repeat top center;
   background-size: cover;
   display: flex;
@@ -106,155 +87,73 @@ a.btn:hover {
 }
 
 /* ===== Content ===== */
-.content {
-  margin-left: var(--sidebar-width);
-  padding: 20px;
-}
+.content { margin-left: var(--sidebar-width); padding: 20px; }
+.page { margin-left: var(--sidebar-width); padding: 20px; }
+.main-content { max-width: 800px; margin: 0 auto; }
 
-/* ===== Blog page layout helpers ===== */
-.page {
-  margin-left: var(--sidebar-width);
-  padding: 20px;
-}
-.main-content {
-  max-width: 800px;
-  margin: 0 auto; /* centers the blog column */
-}
-.blog-banner {
-  text-align: center;
-  margin: 30px 0;
-}
-.blog-banner img {
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  max-width: 100%;
-  height: auto;
-}
+/* ===== Blog Banner (ad block) ===== */
+.blog-banner { text-align: center; margin: 30px 0; }
+.blog-banner img { border-radius: 10px; box-shadow: var(--shadow); max-width: 100%; height: auto; }
 
-/* ===== Photo Cards (background via CSS var --bg) ===== */
+/* ===== Cards ===== */
 .photo-card {
-  /* dark base so transparent PNGs or letterboxed art don't show white */
   background-color: #0d1117;
-
   border-radius: var(--radius-card);
   margin: 40px auto;
   max-width: var(--max-card);
   box-shadow: var(--shadow);
   overflow: hidden;
-
-  /* background image from inline var; safe fallbacks */
   background-image: var(--bg, none);
   background-repeat: no-repeat;
-  background-size: cover;      /* default: fill card; crop if needed */
+  background-size: cover;
   background-position: center;
-
   color: #fff;
 }
 .photo-card .inner {
-  /* allow per-card override with --overlay; default below */
   background: var(--overlay, var(--overlay-default));
   padding: 28px;
   border-radius: var(--radius-inner);
 }
-.photo-card h2,
-.photo-card h3 {
-  margin-top: 0;
-  color: #fff;
-}
-.photo-card p,
-.photo-card ul { color: #eee; }
-.photo-card .card-actions { margin-top: 16px; }
+.photo-card h2, .photo-card h3 { margin-top: 0; color: #fff; }
+.photo-card p, .photo-card ul { color: #eee; }
 
-/* ===== ASN Banner: full-bleed space background + semi-transparent text ===== */
+/* ===== ASN Banner ===== */
 .photo-card.asn-banner {
-  background-size: cover !important;     /* fill the box, crop if needed */
+  background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
-  min-height: 340px;                     /* room for art + text */
+  min-height: 340px;
 }
-/* Remove dark overlay box so art shows fully; center text */
 .photo-card.asn-banner .inner {
-  --overlay: transparent;
+  --overlay: transparent;   /* remove black overlay */
   text-align: center;
 }
-/* Semi-transparent headline/body over the art */
 .photo-card.asn-banner h2,
 .photo-card.asn-banner p {
-  color: rgba(255,255,255,0.75);
+  color: rgba(255,255,255,0.75);  /* semi-transparent text */
 }
-/* Keep the button fully solid for contrast/accessibility */
-.photo-card.asn-banner .btn {
-  color: #fff !important;
-}
+.photo-card.asn-banner .btn { color: #fff !important; }
 
-/* ===== Contact Form ===== */
-.contact-form {
-  display: flex;
-  flex-direction: column;
+/* ===== Contact, Videos, Footer ===== */
+.contact-form { display: flex; flex-direction: column; }
+.contact-form label { margin-top: 10px; margin-bottom: 4px; font-weight: 500; }
+.contact-form input, .contact-form textarea {
+  padding: 8px; border: 1px solid #ccc; border-radius: 6px; font: inherit; background: #fff; color: var(--text);
 }
-.contact-form label {
-  margin-top: 10px;
-  margin-bottom: 4px;
-  font-weight: 500;
-}
-.contact-form input,
-.contact-form textarea {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font: inherit;
-  background: #fff;
-  color: var(--text);
-}
-.contact-form .btn { align-self: start; margin-top: 12px; }
-
-/* ===== Videos ===== */
-.video-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-.video-grid iframe {
-  width: 100%;
-  height: 315px;
-  border: none;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-}
-
-/* ===== Footer ===== */
+.video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.video-grid iframe { width: 100%; height: 315px; border: none; border-radius: 12px; box-shadow: var(--shadow); }
 footer {
-  margin-left: var(--sidebar-width);
-  padding: 20px;
-  text-align: center;
-  background: #fff;
-  box-shadow: var(--shadow);
-  font-size: 0.9rem;
-  color: var(--muted);
+  margin-left: var(--sidebar-width); padding: 20px; text-align: center; background: #fff;
+  box-shadow: var(--shadow); font-size: 0.9rem; color: var(--muted);
 }
 footer a { color: var(--brand); text-decoration: none; }
 footer a:hover { color: var(--brand-dark); }
 
 /* ===== Mobile ===== */
 @media (max-width: 768px) {
-  .side-nav {
-    position: relative;
-    width: 100%;
-    height: auto;
-    box-shadow: none;
-  }
-  .content,
-  .hero,
-  footer,
-  .page {
-    margin-left: 0;
-  }
-  .hero {
-    height: 250px;                /* smaller hero on phones */
-    background-position: top center;
-  }
-  .video-grid {
-    grid-template-columns: 1fr;
-  }
+  .side-nav { position: relative; width: 100%; height: auto; box-shadow: none; }
+  .content, .hero, footer, .page { margin-left: 0; }
+  .hero { height: 250px; background-position: top center; }
+  .video-grid { grid-template-columns: 1fr; }
   .photo-card.asn-banner { min-height: 280px; }
 }
