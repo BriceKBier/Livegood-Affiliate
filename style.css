@@ -44,7 +44,6 @@ a.btn {
   transition: transform .06s ease, background .15s ease, box-shadow .15s ease;
   box-shadow: var(--shadow);
 }
-
 .btn:hover,
 button.btn:hover,
 a.btn:hover {
@@ -52,11 +51,8 @@ a.btn:hover {
   transform: translateY(-1px);
   box-shadow: var(--shadow-hover);
 }
-
 .btn.green { background: var(--success); }
 .btn.green:hover { background: var(--success-dark); }
-
-/* Ensure buttons render if inside dark containers */
 .btn:focus-visible {
   outline: 2px solid #fff;
   outline-offset: 2px;
@@ -73,31 +69,40 @@ a.btn:hover {
   overflow-y: auto;
   z-index: 20;
 }
+.side-nav ul { list-style: none; padding: 0; margin: 0; }
 
-.side-nav ul {
-  list-style: none;
-  padding: 0; margin: 0;
-}
-
+/* Make ALL sidebar links look like pill buttons by default */
 .side-nav a {
   display: block;
-  padding: 8px 0;
-  color: var(--text);
+  padding: 10px 12px;
+  margin: 6px 0;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  background: #eef3fb;       /* light pill */
+  color: #162033;            /* readable on light bg */
+  box-shadow: var(--shadow);
+  transition: transform .06s ease, background .15s ease, box-shadow .15s ease, color .15s ease;
 }
-
+.side-nav a:hover {
+  background: #dde9fb;
+  color: var(--brand-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+/* Keep explicitly .btn links as primary blue inside the sidebar */
 .side-nav a.btn {
-  margin-top: 8px;
+  background: var(--brand);
+  color: #fff !important;
 }
 
-/* ===== Hero (keep image from cropping at the top) ===== */
+/* ===== Hero (anchored at top so it doesn't crop the top of the image) ===== */
 .hero {
   position: relative;
   margin-left: var(--sidebar-width);
   height: 400px; /* adjust as needed */
   background: url('banner.jpg') no-repeat top center;
-  background-size: cover;         /* fills width; anchored at top */
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,40 +128,30 @@ a.btn:hover {
   background-position: center;
   color: #fff;
 }
-
 .photo-card .inner {
   background: rgba(0,0,0,0.55);
   padding: 28px;
   border-radius: var(--radius-inner);
 }
-
 .photo-card h2,
 .photo-card h3 {
   margin-top: 0;
   color: #fff;
 }
-
 .photo-card p,
-.photo-card ul {
-  color: #eee;
-}
-
-.photo-card .card-actions {
-  margin-top: 16px;
-}
+.photo-card ul { color: #eee; }
+.photo-card .card-actions { margin-top: 16px; }
 
 /* ===== Contact Form ===== */
 .contact-form {
   display: flex;
   flex-direction: column;
 }
-
 .contact-form label {
   margin-top: 10px;
   margin-bottom: 4px;
   font-weight: 500;
 }
-
 .contact-form input,
 .contact-form textarea {
   padding: 8px;
@@ -166,12 +161,7 @@ a.btn:hover {
   background: #fff;
   color: var(--text);
 }
-
-/* Make the submit button look like our global .btn even if not wrapped in .photo-card */
-.contact-form .btn {
-  align-self: start;
-  margin-top: 12px;
-}
+.contact-form .btn { align-self: start; margin-top: 12px; }
 
 /* ===== Videos ===== */
 .video-grid {
@@ -179,7 +169,6 @@ a.btn:hover {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
-
 .video-grid iframe {
   width: 100%;
   height: 315px;
@@ -198,11 +187,7 @@ footer {
   font-size: 0.9rem;
   color: var(--muted);
 }
-
-footer a {
-  color: var(--brand);
-  text-decoration: none;
-}
+footer a { color: var(--brand); text-decoration: none; }
 footer a:hover { color: var(--brand-dark); }
 
 /* ===== Mobile ===== */
