@@ -9,59 +9,34 @@
   <meta property="og:title" content="LiveGood Blog" />
   <meta property="og:description" content="Articles and product spotlights from LiveGood." />
   <meta property="og:type" content="article" />
-  <link rel="stylesheet" href="style.css?v=12" />
+  <link rel="stylesheet" href="style.css?v=13" />
 
-  <!-- Layout: posts (700px) + flexible gutter with centered banner -->
   <style>
-    /* Account for the fixed left nav */
-    .page { margin-left: var(--sidebar-width); }
-
-    /* Grid: 700px post column + flexible gutter */
-    .content-wrapper {
-      display: grid;
-      grid-template-columns: 700px 1fr; /* posts | right gutter */
-      align-items: start;               /* top edges align */
-      width: 100%;
-      padding: 0 16px;                  /* small side breathing room */
-      box-sizing: border-box;
-      margin: 20px 0;                   /* space from top content edge */
-      gap: 0;                           /* no forced gap; gutter is the 1fr column */
+    .page {
+      margin-left: var(--sidebar-width);
+      padding: 20px;
     }
-
-    /* Keep reading width tidy */
-    .main-content { max-width: 700px; }
-
-    /* Center banner inside the flexible gutter and match first card top offset */
-    .blog-sidebar {
-      display: flex;
-      justify-content: center;          /* centers banner horizontally in the gutter */
-      align-items: flex-start;          /* aligns top */
-      margin-top: 40px;                 /* matches first article's default top margin */
+    .main-content {
+      max-width: 800px;
+      margin: 0 auto; /* centers the blog column */
     }
-    .blog-sidebar img {
+    .blog-banner {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .blog-banner img {
       border-radius: 10px;
       box-shadow: var(--shadow);
       max-width: 100%;
       height: auto;
-      display: block;
     }
-
-    /* Mobile / narrower screens: stack */
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
       .page { margin-left: 0; }
-      .content-wrapper {
-        grid-template-columns: 1fr;     /* single column */
-        margin: 20px auto;
-      }
-      .blog-sidebar {
-        margin: 20px auto 0;
-        justify-content: center;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Sidebar: back to home -->
+  <!-- Sidebar -->
   <nav class="side-nav">
     <ul>
       <li><a href="index.html" class="btn">← Back to Home</a></li>
@@ -69,127 +44,55 @@
   </nav>
 
   <div class="page">
-    <div class="content-wrapper">
-      <!-- ===== Main blog posts (700px column) ===== -->
-      <div class="main-content">
+    <div class="main-content">
 
-        <!-- Post 1: Collagen -->
-        <article class="photo-card" style="--bg: url('health-bg.jpg');">
-          <div class="inner">
-            <header style="margin-bottom:18px;">
-              <h2>Unlock Youth from the Inside Out — LiveGood Collagen Peptides</h2>
-              <time datetime="2025-09-30" style="color:#e6e9ee;font-size:0.9rem;">September 30, 2025</time>
-            </header>
-            <p>
-              Collagen is the scaffolding for skin, joints, hair, nails, and bones—but production slows with age.
-              <strong>LiveGood Collagen Peptides</strong> pairs hydrolyzed collagen (Types I &amp; III) with Velositol™, Polynol™, and ApresFlex™
-              for a well-rounded formula aimed at muscle recovery, joint comfort, and healthy-looking skin.
-            </p>
-            <ul>
-              <li><strong>Hydrolyzed Collagen I &amp; III</strong> — easy to absorb.</li>
-              <li><strong>Velositol™</strong> — supports muscle protein synthesis.</li>
-              <li><strong>Polynol™ &amp; ApresFlex™</strong> — comfort & flexibility.</li>
-            </ul>
-            <div class="card-actions">
-              <a class="btn" href="https://www.livegood.com/products" target="_blank" rel="noopener">Browse LiveGood Products</a>
-            </div>
+      <!-- Post 1: Collagen -->
+      <article class="photo-card" style="--bg: url('health-bg.jpg');">
+        <div class="inner">
+          <header style="margin-bottom:18px;">
+            <h2>Unlock Youth from the Inside Out — LiveGood Collagen Peptides</h2>
+            <time datetime="2025-09-30" style="color:#e6e9ee;font-size:0.9rem;">September 30, 2025</time>
+          </header>
+          <p>
+            Collagen is the scaffolding for skin, joints, hair, nails, and bones—but production slows with age.
+            <strong>LiveGood Collagen Peptides</strong> pairs hydrolyzed collagen (Types I &amp; III) with Velositol™, Polynol™, and ApresFlex™
+            for a well-rounded formula aimed at muscle recovery, joint comfort, and healthy-looking skin.
+          </p>
+          <ul>
+            <li><strong>Hydrolyzed Collagen I &amp; III</strong> — easy to absorb.</li>
+            <li><strong>Velositol™</strong> — supports muscle protein synthesis.</li>
+            <li><strong>Polynol™ &amp; ApresFlex™</strong> — comfort & flexibility.</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn" href="https://www.livegood.com/products" target="_blank" rel="noopener">Browse LiveGood Products</a>
           </div>
-        </article>
+        </div>
+      </article>
 
-        <!-- Post 2: Essential Oils -->
-        <article class="photo-card" style="--bg: url('essential-oils-open.png');">
-          <div class="inner">
-            <header style="margin-bottom:18px;">
-              <h2>Why I Keep Essential Oils on Hand</h2>
-              <time datetime="2025-09-30" style="color:#e6e9ee;font-size:0.9rem;">September 30, 2025</time>
-            </header>
-            <p>
-              From focus to calm to fresh air, a few quality oils cover a lot of daily needs. LiveGood’s oils are
-              batch-tested and priced for everyday use—so you don’t have to baby them.
-            </p>
-            <ul>
-              <li><strong>Purity</strong> you can verify</li>
-              <li><strong>Value</strong> that makes daily use realistic</li>
-              <li><strong>Blends + singles</strong> for sleep, energy, clarity, and more</li>
-            </ul>
-            <div class="card-actions">
-              <a class="btn green" href="https://www.shoplivegood.com/essentialOils" target="_blank" rel="noopener">Shop Oils</a>
-            </div>
+      <!-- Post 2: Essential Oils -->
+      <article class="photo-card" style="--bg: url('essential-oils-open.png');">
+        <div class="inner">
+          <header style="margin-bottom:18px;">
+            <h2>Why I Keep Essential Oils on Hand</h2>
+            <time datetime="2025-09-30" style="color:#e6e9ee;font-size:0.9rem;">September 30, 2025</time>
+          </header>
+          <p>
+            From focus to calm to fresh air, a few quality oils cover a lot of daily needs. LiveGood’s oils are
+            batch-tested and priced for everyday use—so you don’t have to baby them.
+          </p>
+          <ul>
+            <li><strong>Purity</strong> you can verify</li>
+            <li><strong>Value</strong> that makes daily use realistic</li>
+            <li><strong>Blends + singles</strong> for sleep, energy, clarity, and more</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn green" href="https://www.shoplivegood.com/essentialOils" target="_blank" rel="noopener">Shop Oils</a>
           </div>
-        </article>
+        </div>
+      </article>
 
-        <!-- Post 3: Detox -->
-        <article class="photo-card" style="--bg: url('DetoxSS.png');">
-          <div class="inner">
-            <header style="margin-bottom:18px;">
-              <h2>Gentle Daily Detox — Chlorophyll &amp; Zeolite</h2>
-              <time datetime="2025-09-25" style="color:#e6e9ee;font-size:0.9rem;">September 25, 2025</time>
-            </header>
-            <p>
-              Support your body’s natural cleansing process. Chlorophyll helps freshen and energize; zeolite binds and removes
-              everyday pollutants. Easy add-in for water or under-the-tongue use.
-            </p>
-            <ul>
-              <li>Daily support for energy &amp; balance</li>
-              <li>Pairs well with greens and probiotics</li>
-              <li>Gentle formula; no harsh flush</li>
-            </ul>
-            <div class="card-actions">
-              <a class="btn" href="https://www.MyFreeDetox.com/Brice" target="_blank" rel="noopener">Learn More</a>
-              <a class="btn green" href="https://www.MyFreeDetox.com/Brice" target="_blank" rel="noopener">Get Your Free Bottle</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Post 4: Membership -->
-        <article class="photo-card" style="--bg: url('highest-quality-products.jpg');">
-          <div class="inner">
-            <header style="margin-bottom:18px;">
-              <h2>How Membership Pays for Itself</h2>
-              <time datetime="2025-09-22" style="color:#e6e9ee;font-size:0.9rem;">September 22, 2025</time>
-            </header>
-            <p>
-              Wholesale pricing on the entire lineup. If you’re already picking up a couple items a month,
-              the membership fee often nets out—then it’s pure savings.
-            </p>
-            <ul>
-              <li><strong>Monthly:</strong> $9.95</li>
-              <li><strong>Yearly:</strong> $99.95 (save ~20%)</li>
-              <li>Cancel anytime</li>
-            </ul>
-            <div class="card-actions">
-              <a class="btn" href="https://www.livegood.com/membership" target="_blank" rel="noopener">See Member Pricing</a>
-              <a class="btn" href="#contact">Ask a Question</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Post 5: Product Highlights -->
-        <article class="photo-card" style="--bg: url('products1.jpg');">
-          <div class="inner">
-            <header style="margin-bottom:18px;">
-              <h2>Top Picks This Month</h2>
-              <time datetime="2025-09-18" style="color:#e6e9ee;font-size:0.9rem;">September 18, 2025</time>
-            </header>
-            <p>
-              A few staples that punch above their price: organic coffee with focus-friendly ingredients,
-              magnesium for calm/sleep, and a clean daily multi to cover the bases.
-            </p>
-            <ul>
-              <li>Daily Multi (Men’s/Women’s)</li>
-              <li>Magnesium Complex</li>
-              <li>Organic Coffee</li>
-            </ul>
-            <div class="card-actions">
-              <a class="btn" href="https://www.livegood.com/products" target="_blank" rel="noopener">Browse All Products</a>
-            </div>
-          </div>
-        </article>
-
-      </div><!-- /main-content -->
-
-      <!-- ===== Right gutter (banner centered) ===== -->
-      <aside class="blog-sidebar">
+      <!-- === Banner in between Oils and Detox === -->
+      <div class="blog-banner">
         <a href="https://track.healthtrader.com/track.php?lid=765550&rid=217028&aid=14768580"
            target="_blank"
            rel="nofollow sponsored noopener">
@@ -198,9 +101,78 @@
           <img src="https://track.healthtrader.com/imp.php?rid=217028&aid=14768580&did=405"
                width="0" height="0" style="display:none;" alt="">
         </a>
-      </aside>
-    </div><!-- /content-wrapper -->
-  </div><!-- /page -->
+      </div>
+
+      <!-- Post 3: Detox -->
+      <article class="photo-card" style="--bg: url('DetoxSS.png');">
+        <div class="inner">
+          <header style="margin-bottom:18px;">
+            <h2>Gentle Daily Detox — Chlorophyll &amp; Zeolite</h2>
+            <time datetime="2025-09-25" style="color:#e6e9ee;font-size:0.9rem;">September 25, 2025</time>
+          </header>
+          <p>
+            Support your body’s natural cleansing process. Chlorophyll helps freshen and energize; zeolite binds and removes
+            everyday pollutants. Easy add-in for water or under-the-tongue use.
+          </p>
+          <ul>
+            <li>Daily support for energy &amp; balance</li>
+            <li>Pairs well with greens and probiotics</li>
+            <li>Gentle formula; no harsh flush</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn" href="https://www.MyFreeDetox.com/Brice" target="_blank" rel="noopener">Learn More</a>
+            <a class="btn green" href="https://www.MyFreeDetox.com/Brice" target="_blank" rel="noopener">Get Your Free Bottle</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Post 4: Membership -->
+      <article class="photo-card" style="--bg: url('highest-quality-products.jpg');">
+        <div class="inner">
+          <header style="margin-bottom:18px;">
+            <h2>How Membership Pays for Itself</h2>
+            <time datetime="2025-09-22" style="color:#e6e9ee;font-size:0.9rem;">September 22, 2025</time>
+          </header>
+          <p>
+            Wholesale pricing on the entire lineup. If you’re already picking up a couple items a month,
+            the membership fee often nets out—then it’s pure savings.
+          </p>
+          <ul>
+            <li><strong>Monthly:</strong> $9.95</li>
+            <li><strong>Yearly:</strong> $99.95 (save ~20%)</li>
+            <li>Cancel anytime</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn" href="https://www.livegood.com/membership" target="_blank" rel="noopener">See Member Pricing</a>
+            <a class="btn" href="#contact">Ask a Question</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Post 5: Product Highlights -->
+      <article class="photo-card" style="--bg: url('products1.jpg');">
+        <div class="inner">
+          <header style="margin-bottom:18px;">
+            <h2>Top Picks This Month</h2>
+            <time datetime="2025-09-18" style="color:#e6e9ee;font-size:0.9rem;">September 18, 2025</time>
+          </header>
+          <p>
+            A few staples that punch above their price: organic coffee with focus-friendly ingredients,
+            magnesium for calm/sleep, and a clean daily multi to cover the bases.
+          </p>
+          <ul>
+            <li>Daily Multi (Men’s/Women’s)</li>
+            <li>Magnesium Complex</li>
+            <li>Organic Coffee</li>
+          </ul>
+          <div class="card-actions">
+            <a class="btn" href="https://www.livegood.com/products" target="_blank" rel="noopener">Browse All Products</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
 
   <footer>
     <p>&copy; 2025 LiveGood • Brice • <a href="tel:+18548550747">Call: (854) 855-0747</a></p>
