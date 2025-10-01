@@ -1,254 +1,82 @@
 <!DOCTYPE html>
-<html lang="en" id="top">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LiveGood Blog</title>
-  <style>
-    :root{
-      --max-card:1100px; --radius-card:14px;
-      --shadow:0 8px 24px rgba(0,0,0,.14);
-      --shadow-hover:0 12px 28px rgba(0,0,0,.20);
-      --brand:#0077cc; --brand-dark:#005fa3;
-      --muted:#5b6470; --surface:#e9edf3; --text:#223;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#f6f8fb;color:var(--text)}
-    a{color:inherit}
-    /* Top bar */
-    header.topbar{background:var(--brand);color:#fff;padding:24px 16px}
-    header.topbar .wrap{max-width:var(--max-card);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
-    header.topbar h1{margin:0;font-size:1.75rem}
-    header.topbar nav a{color:#fff;text-decoration:none;margin-left:16px;font-weight:600;opacity:.95}
-    header.topbar nav a[aria-current="page"]{text-decoration:underline}
-    /* Main layout */
-    main{max-width:var(--max-card);margin:40px auto;padding:0 16px 48px}
-    .meta{color:var(--muted);font-size:.95rem;margin:0 0 24px}
-    /* Cards list */
-    .blog-list{display:grid;gap:24px}
-    .card{background:#fff;border-radius:var(--radius-card);box-shadow:var(--shadow);overflow:hidden;transition:box-shadow .2s, transform .2s}
-    .card:hover{box-shadow:var(--shadow-hover);transform:translateY(-1px)}
-    .cover{display:block;width:100%;height:260px;object-fit:cover}
-    .card-body{padding:22px}
-    .card-body h2{margin:0 0 6px;font-size:1.35rem}
-    .tag{font-size:.85rem;background:#e9edf3;padding:6px 10px;border-radius:999px;color:#334}
-    .row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--brand);color:#fff;text-decoration:none;font-weight:600}
-    .btn:hover{background:var(--brand-dark)}
-    /* Full posts */
-    .posts{margin-top:44px}
-    .post{background:#fff;border-radius:var(--radius-card);box-shadow:var(--shadow);padding:28px;margin:28px 0}
-    .post header{margin-bottom:12px}
-    .post time{color:var(--muted);font-size:.9rem}
-    .back{display:inline-block;margin-top:12px}
-    /* Footer */
-    footer.site{background:var(--surface);color:var(--muted);text-align:center;padding:20px 16px;font-size:.9rem}
-    /* Anchor offset for sticky-ish jump comfort */
-    :target::before{content:"";display:block;height:70px;margin-top:-70px}
-  </style>
+  <meta name="description" content="Articles and product spotlights from LiveGood." />
+  <link rel="canonical" href="https://bricekbier.github.io/Livegood-Affiliate/blog.html" />
+  <meta property="og:title" content="LiveGood Blog" />
+  <meta property="og:description" content="Articles and product spotlights from LiveGood." />
+  <meta property="og:type" content="article" />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body>
+  <!-- Simple top link back to home -->
+  <nav class="side-nav">
+    <ul>
+      <li><a href="index.html" class="btn">← Back to Home</a></li>
+    </ul>
+  </nav>
 
-  <!-- Top bar -->
-  <header class="topbar">
-    <div class="wrap">
-      <h1>LiveGood Blog</h1>
-      <nav>
-        <a href="index.html#about">About</a>
-        <a href="index.html#retail">Shop</a>
-        <a href="blog.html" aria-current="page">Blog</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <p class="meta">Latest articles, product deep-dives, and member tips.</p>
-
-    <!-- ===== List of posts (cards) ===== -->
-    <section class="blog-list">
-
-      <!-- Frankincense (NEW) -->
-      <article class="card">
-        <a href="#post-frankincense" aria-label="Read: Frankincense — The King of Oils">
-          <img class="cover" src="essential-oils-open.png" alt="Frankincense resin and essential oil bottle"/>
-        </a>
-        <div class="card-body">
-          <h2><a href="#post-frankincense" style="text-decoration:none;">Frankincense — The King of Oils</a></h2>
-          <div class="meta">
-            <time datetime="2025-10-01">October 1, 2025</time> • <span class="tag">Essential Oils</span>
-          </div>
-          <p>
-            For thousands of years, Frankincense has been called the King of Oils—once worth more than gold and prized by royalty.
-            See why it still earns the crown, how to use it daily, and how LiveGood keeps every drop pure.
-          </p>
-          <div class="row">
-            <a class="btn" href="#post-frankincense">Read more</a>
-            <a href="index.html#retail">Shop Oils</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Collagen -->
-      <article class="card">
-        <a href="#post-collagen" aria-label="Read: LiveGood Collagen Peptides">
-          <img class="cover" src="products1.jpg" alt="Collagen peptides on a kitchen counter"/>
-        </a>
-        <div class="card-body">
-          <h2><a href="#post-collagen" style="text-decoration:none;">Unlock Youth from the Inside Out — LiveGood Collagen Peptides</a></h2>
-          <div class="meta">
-            <time datetime="2025-09-30">September 30, 2025</time> • <span class="tag">Skin &amp; Joints</span>
-          </div>
-          <p>
-            Collagen is the scaffolding for skin, joints, hair, nails, and bones—but production slows with age.
-            LiveGood’s formula pairs hydrolyzed collagen (Types I &amp; III) with Velositol™, Polynol™, and ApresFlex™.
-          </p>
-          <div class="row">
-            <a class="btn" href="#post-collagen">Read more</a>
-            <a href="index.html#retail">Shop Collagen</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Example Post A — rename image/text if you like -->
-      <article class="card">
-        <a href="#post-detox" aria-label="Read: Daily Detox & Greens">
-          <img class="cover" src="DetoxSS.png" alt="Green detox smoothie and ingredients"/>
-        </a>
-        <div class="card-body">
-          <h2><a href="#post-detox" style="text-decoration:none;">Daily Detox &amp; Greens — Clean Fuel for Busy Days</a></h2>
-          <div class="meta">
-            <time datetime="2025-09-22">September 22, 2025</time> • <span class="tag">Energy</span>
-          </div>
-          <p>
-            What’s inside the greens blend, how it supports gut health and steady energy, plus easy ways to make it taste great.
-          </p>
-          <div class="row">
-            <a class="btn" href="#post-detox">Read more</a>
-            <a href="index.html#retail">Shop Greens</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Example Post B — rename image/text if you like -->
-      <article class="card">
-        <a href="#post-membership" aria-label="Read: Member Savings Guide">
-          <img class="cover" src="highest-quality-products.jpg" alt="Assorted LiveGood products on a table"/>
-        </a>
-        <div class="card-body">
-          <h2><a href="#post-membership" style="text-decoration:none;">Membership Math — How the Savings Add Up</a></h2>
-          <div class="meta">
-            <time datetime="2025-09-12">September 12, 2025</time> • <span class="tag">Member Tips</span>
-          </div>
-          <p>
-            Side-by-side pricing, where bundles save the most, and three items that often cover the monthly fee.
-          </p>
-          <div class="row">
-            <a class="btn" href="#post-membership">Read more</a>
-            <a href="index.html#membership">Join &amp; Save</a>
-          </div>
-        </div>
-      </article>
-
-    </section>
-
-    <!-- ===== Full posts on same page (anchors) ===== -->
-    <section class="posts">
-
-      <!-- FULL: Frankincense (NEW) -->
-      <article id="post-frankincense" class="post">
-        <header>
-          <h2>Frankincense — The King of Oils</h2>
-          <time datetime="2025-10-01">October 1, 2025</time>
-        </header>
-        <p>
-          For thousands of years, <strong>Frankincense</strong> has been called the King of Oils. Once worth more than gold and given as a gift to kings and
-          spiritual leaders, it has stood the test of time as one of the most legendary natural remedies in history.
-        </p>
-        <p>
-          In our recent LiveGood training with Dr. Ryan and Lisa, we explored why Frankincense remains so treasured and how modern research is confirming
-          what ancient cultures already knew.
-        </p>
-        <h3>What We Covered</h3>
-        <ul>
-          <li>✨ The fascinating history of Frankincense and its role across cultures</li>
-          <li>✨ The health and wellness benefits that make it a must-have in your routine</li>
-          <li>✨ How LiveGood ensures purity and potency in every single drop</li>
-          <li>✨ Practical ways to use Frankincense daily for skin, mood, and overall health</li>
-        </ul>
-        <p>
-          Frankincense has been trusted for millennia because it works. With LiveGood, you get quality and transparency—so you can feel confident making it part
-          of your daily wellness routine.
-        </p>
-        <p>🎥 <a href="https://youtube.com/live/RH98RTYpVXU" target="_blank" rel="noopener">Watch the Frankincense training replay</a></p>
-        <p>🦴 <a href="https://youtube.com/live/FqxPEVjVXl4?feature=share" target="_blank" rel="noopener">Catch last week’s Osteo Complete session</a></p>
-        <p>🛒 <a href="https://www.livegood.com/shop" target="_blank" rel="noopener">Explore the full LiveGood shop</a></p>
-        <p><a class="back" href="#top">↑ Back to top</a></p>
-      </article>
-
-      <!-- FULL: Collagen -->
-      <article id="post-collagen" class="post">
-        <header>
+  <div class="content" style="padding-top:20px;">
+    <!-- Post: Collagen -->
+    <article class="photo-card" style="--bg: url('health-bg.jpg');">
+      <div class="inner">
+        <header style="margin-bottom:18px;">
           <h2>Unlock Youth from the Inside Out — LiveGood Collagen Peptides</h2>
-          <time datetime="2025-09-30">September 30, 2025</time>
+          <time datetime="2025-09-30" style="color:#e6e9ee;font-size:0.9rem;">September 30, 2025</time>
         </header>
+
         <p>
           Collagen is the scaffolding for skin, joints, hair, nails, and bones—but production slows with age.
-          <strong>LiveGood Collagen Peptides</strong> pairs hydrolyzed collagen (Types I &amp; III) with
-          Velositol™, Polynol™, and ApresFlex™ for a well-rounded formula aimed at
-          muscle recovery, joint comfort, and healthy-looking skin.
+          <strong>LiveGood Collagen Peptides</strong> pairs hydrolyzed collagen (Types I &amp; III) with Velositol™, Polynol™, and ApresFlex™
+          for a well-rounded formula aimed at muscle recovery, joint comfort, and healthy-looking skin.
         </p>
-        <ul>
-          <li><strong>Hydrolyzed Collagen I &amp; III</strong> — easy to absorb, supports skin elasticity and joint mobility.</li>
-          <li><strong>Velositol™</strong> — enhances muscle protein synthesis for better strength and recovery.</li>
-          <li><strong>Polynol™</strong> — plant-based antioxidant support.</li>
-          <li><strong>ApresFlex™</strong> — clinically studied for joint comfort and flexibility.</li>
-        </ul>
-        <p>Stir into coffee, smoothies, or shakes—simple daily habit, real foundation support.</p>
-        <p><a class="back" href="#top">↑ Back to top</a></p>
-      </article>
 
-      <!-- FULL: Detox (sample copy—edit as you like) -->
-      <article id="post-detox" class="post">
-        <header>
-          <h2>Daily Detox &amp; Greens — Clean Fuel for Busy Days</h2>
-          <time datetime="2025-09-22">September 22, 2025</time>
+        <ul>
+          <li><strong>Hydrolyzed Collagen I &amp; III</strong> — easy to absorb and use.</li>
+          <li><strong>Velositol™</strong> — supports muscle protein synthesis.</li>
+          <li><strong>Polynol™ &amp; ApresFlex™</strong> — help joint comfort and flexibility.</li>
+        </ul>
+
+        <div class="card-actions">
+          <a class="btn" href="https://www.livegood.com/products" target="_blank" rel="noopener">Browse LiveGood Products</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Post: Essential Oils spotlight -->
+    <article class="photo-card" style="--bg: url('essential-oils-open.png');">
+      <div class="inner">
+        <header style="margin-bottom:18px;">
+          <h2>Why I Keep Essential Oils on Hand</h2>
+          <time datetime="2025-09-30" style="color:#e6e9ee;font-size:0.9rem;">September 30, 2025</time>
         </header>
+
         <p>
-          When life’s loud, your body whispers. This greens blend focuses on micronutrients and gentle detox support
-          to keep energy steady without the crash.
+          From focus to calm to fresh air, a few quality oils cover a lot of daily needs. LiveGood’s oils are
+          batch-tested and priced for everyday use—so you don’t have to baby them.
         </p>
+
         <ul>
-          <li><strong>Greens &amp; Antioxidants</strong> — phytonutrients that support cellular clean-up.</li>
-          <li><strong>Digestive Support</strong> — ingredients geared toward gut balance and comfort.</li>
-          <li><strong>Easy Mix</strong> — water, milk, or smoothie; add lemon or mint if you want it brighter.</li>
+          <li><strong>Purity</strong> you can verify</li>
+          <li><strong>Value</strong> that makes daily use realistic</li>
+          <li><strong>Blends + singles</strong> for sleep, energy, clarity, and more</li>
         </ul>
-        <p><a class="back" href="#top">↑ Back to top</a></p>
-      </article>
 
-      <!-- FULL: Membership (sample copy—edit as you like) -->
-      <article id="post-membership" class="post">
-        <header>
-          <h2>Membership Math — How the Savings Add Up</h2>
-          <time datetime="2025-09-12">September 12, 2025</time>
-        </header>
-        <p>
-          Wholesale pricing is great on paper; here’s where it’s usually felt.
-          Bundles stack the savings, and a few staples can cover the monthly fee by themselves.
-        </p>
-        <ul>
-          <li><strong>Compare Side-by-Side</strong> — typical retail vs member price.</li>
-          <li><strong>Bundles</strong> — Daily Essentials and Foundational Five tend to be the best per-item value.</li>
-          <li><strong>Break-Even</strong> — many folks cross the line with three regular items a month.</li>
-        </ul>
-        <p><a class="back" href="#top">↑ Back to top</a></p>
-      </article>
+        <!-- ✅ This is the exact link you asked for -->
+        <div class="card-actions">
+          <a class="btn green" href="https://www.shoplivegood.com/essentialOils" target="_blank" rel="noopener">Shop Oils</a>
+        </div>
+      </div>
+    </article>
 
-    </section>
-  </main>
+    <!-- (Add more posts below as needed) -->
+  </div>
 
-  <footer class="site">
-    <p>&copy; 2025 LiveGood. All rights reserved.</p>
+  <footer>
+    <p>&copy; 2025 LiveGood • Brice • <a href="tel:+18548550747">Call: (854) 855-0747</a></p>
   </footer>
 </body>
 </html>
