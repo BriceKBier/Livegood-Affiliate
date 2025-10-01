@@ -21,10 +21,45 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  margin: 0; 
+  margin: 0;
   padding: 0;
   background: #f6f8fb;
   color: var(--text);
+}
+
+/* ===== Global Buttons (anchors + button elements) ===== */
+.btn,
+button.btn,
+a.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--brand);
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 600;
+  border: 0;
+  cursor: pointer;
+  line-height: 1.2;
+  transition: transform .06s ease, background .15s ease, box-shadow .15s ease;
+  box-shadow: var(--shadow);
+}
+
+.btn:hover,
+button.btn:hover,
+a.btn:hover {
+  background: var(--brand-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn.green { background: var(--success); }
+.btn.green:hover { background: var(--success-dark); }
+
+/* Ensure buttons render if inside dark containers */
+.btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
 
 /* ===== Sidebar ===== */
@@ -36,6 +71,7 @@ body {
   background: #fff;
   box-shadow: var(--shadow);
   overflow-y: auto;
+  z-index: 20;
 }
 
 .side-nav ul {
@@ -52,28 +88,19 @@ body {
 }
 
 .side-nav a.btn {
-  display: inline-block;
   margin-top: 8px;
-  padding: 8px 12px;
-  background: var(--brand);
-  color: #fff;
-  border-radius: 6px;
 }
 
-.side-nav a:hover {
-  color: var(--brand-dark);
-}
-
-/* ===== Hero ===== */
+/* ===== Hero (keep image from cropping at the top) ===== */
 .hero {
+  position: relative;
   margin-left: var(--sidebar-width);
   height: 400px; /* adjust as needed */
   background: url('banner.jpg') no-repeat top center;
-  background-size: cover;
+  background-size: cover;         /* fills width; anchored at top */
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
   text-align: center;
 }
 
@@ -83,6 +110,7 @@ body {
   padding: 20px;
 }
 
+/* Cards that use a background photo via inline --bg custom property */
 .photo-card {
   background: #fff;
   border-radius: var(--radius-card);
@@ -90,6 +118,7 @@ body {
   max-width: var(--max-card);
   box-shadow: var(--shadow);
   overflow: hidden;
+  background-image: var(--bg);
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -116,29 +145,6 @@ body {
   margin-top: 16px;
 }
 
-.photo-card .btn {
-  display: inline-block;
-  padding: 10px 16px;
-  margin-right: 8px;
-  border-radius: 8px;
-  background: var(--brand);
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.photo-card .btn.green {
-  background: var(--success);
-}
-
-.photo-card .btn:hover {
-  background: var(--brand-dark);
-}
-
-.photo-card .btn.green:hover {
-  background: var(--success-dark);
-}
-
 /* ===== Contact Form ===== */
 .contact-form {
   display: flex;
@@ -157,26 +163,14 @@ body {
   border: 1px solid #ccc;
   border-radius: 6px;
   font: inherit;
-}
-
-/* ===== Footer ===== */
-footer {
-  margin-left: var(--sidebar-width);
-  padding: 20px;
-  text-align: center;
   background: #fff;
-  box-shadow: var(--shadow);
-  font-size: 0.9rem;
-  color: var(--muted);
+  color: var(--text);
 }
 
-footer a {
-  color: var(--brand);
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: var(--brand-dark);
+/* Make the submit button look like our global .btn even if not wrapped in .photo-card */
+.contact-form .btn {
+  align-self: start;
+  margin-top: 12px;
 }
 
 /* ===== Videos ===== */
@@ -194,6 +188,23 @@ footer a:hover {
   box-shadow: var(--shadow);
 }
 
+/* ===== Footer ===== */
+footer {
+  margin-left: var(--sidebar-width);
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  box-shadow: var(--shadow);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+footer a {
+  color: var(--brand);
+  text-decoration: none;
+}
+footer a:hover { color: var(--brand-dark); }
+
 /* ===== Mobile ===== */
 @media (max-width: 768px) {
   .side-nav {
@@ -208,7 +219,8 @@ footer a:hover {
     margin-left: 0;
   }
   .hero {
-    height: 250px;
+    height: 250px;                /* smaller hero on phones */
+    background-position: top center;
   }
   .video-grid {
     grid-template-columns: 1fr;
