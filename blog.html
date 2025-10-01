@@ -9,37 +9,34 @@
   <meta property="og:title" content="LiveGood Blog" />
   <meta property="og:description" content="Articles and product spotlights from LiveGood." />
   <meta property="og:type" content="article" />
-  <link rel="stylesheet" href="style.css?v=11" />
+  <link rel="stylesheet" href="style.css?v=12" />
 
-  <!-- Layout tweaks for centered two-column blog + right banner -->
+  <!-- Layout: posts (700px) + flexible gutter with centered banner -->
   <style>
-    /* This wrapper shifts everything to account for the fixed left nav */
-    .page {
-      margin-left: var(--sidebar-width);
-    }
+    /* Account for the fixed left nav */
+    .page { margin-left: var(--sidebar-width); }
 
-    /* Center the two-column row within the available area (to the right of sidebar) */
+    /* Grid: 700px post column + flexible gutter */
     .content-wrapper {
-      display: flex;
-      align-items: flex-start;     /* top edges align */
-      gap: 40px;                   /* space between posts and banner column */
-      max-width: 1100px;           /* 700 (posts) + 40 gap + 300 (banner) + some breathing room */
-      margin: 20px auto;           /* centers the row horizontally */
-      padding: 0 16px;             /* small side breathing on narrow screens */
+      display: grid;
+      grid-template-columns: 700px 1fr; /* posts | right gutter */
+      align-items: start;               /* top edges align */
+      width: 100%;
+      padding: 0 16px;                  /* small side breathing room */
+      box-sizing: border-box;
+      margin: 20px 0;                   /* space from top content edge */
+      gap: 0;                           /* no forced gap; gutter is the 1fr column */
     }
 
-    /* Fixed post column width for a clean reading line length */
-    .main-content {
-      flex: 0 0 700px;
-      max-width: 700px;
-    }
+    /* Keep reading width tidy */
+    .main-content { max-width: 700px; }
 
-    /* Fixed banner column; centers the banner inside it */
+    /* Center banner inside the flexible gutter and match first card top offset */
     .blog-sidebar {
-      flex: 0 0 300px;
       display: flex;
-      justify-content: center;     /* centers the banner in the 300px column */
-      align-items: flex-start;     /* aligns top with posts */
+      justify-content: center;          /* centers banner horizontally in the gutter */
+      align-items: flex-start;          /* aligns top */
+      margin-top: 40px;                 /* matches first article's default top margin */
     }
     .blog-sidebar img {
       border-radius: 10px;
@@ -49,25 +46,17 @@
       display: block;
     }
 
-    /* Mobile: stack columns, keep banner centered below posts */
+    /* Mobile / narrower screens: stack */
     @media (max-width: 900px) {
+      .page { margin-left: 0; }
       .content-wrapper {
-        flex-direction: column;
-        max-width: 750px;          /* narrower center column */
-      }
-      .main-content {
-        flex: 1 1 auto;
-        max-width: 100%;
+        grid-template-columns: 1fr;     /* single column */
+        margin: 20px auto;
       }
       .blog-sidebar {
-        width: 100%;
-        margin: 10px 0 0;
+        margin: 20px auto 0;
+        justify-content: center;
       }
-    }
-
-    @media (max-width: 768px) {
-      .page { margin-left: 0; }    /* drop sidebar offset when the sidebar stacks */
-      .content-wrapper { padding: 0 12px; }
     }
   </style>
 </head>
@@ -81,7 +70,7 @@
 
   <div class="page">
     <div class="content-wrapper">
-      <!-- ===== Main blog posts ===== -->
+      <!-- ===== Main blog posts (700px column) ===== -->
       <div class="main-content">
 
         <!-- Post 1: Collagen -->
@@ -199,7 +188,7 @@
 
       </div><!-- /main-content -->
 
-      <!-- ===== Right column banner ===== -->
+      <!-- ===== Right gutter (banner centered) ===== -->
       <aside class="blog-sidebar">
         <a href="https://track.healthtrader.com/track.php?lid=765550&rid=217028&aid=14768580"
            target="_blank"
