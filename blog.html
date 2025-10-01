@@ -9,16 +9,14 @@
   <meta property="og:title" content="LiveGood Blog" />
   <meta property="og:description" content="Articles and product spotlights from LiveGood." />
   <meta property="og:type" content="article" />
-  <!-- bump cache-buster if you tweak CSS again -->
-  <link rel="stylesheet" href="style.css?v=9" />
+  <link rel="stylesheet" href="style.css?v=10" />
 
-  <!-- Layout styles just for the blog page (sidebar + right ad column) -->
+  <!-- Layout tweaks for blog with right banner -->
   <style>
     .content-wrapper {
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      gap: 24px;
       margin-left: var(--sidebar-width);
       padding: 20px;
     }
@@ -27,15 +25,17 @@
       max-width: 700px;
     }
     .blog-sidebar {
-      width: 300px;
-      position: sticky;
-      top: 20px;
+      flex: 0 0 300px;
+      margin-left: auto;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
     }
     .blog-sidebar img {
       border-radius: 10px;
       box-shadow: var(--shadow);
+      max-width: 100%;
       height: auto;
-      width: 100%;
     }
     @media (max-width: 768px) {
       .content-wrapper {
@@ -43,13 +43,8 @@
         margin-left: 0;
       }
       .blog-sidebar {
-        width: 100%;
-        position: static;
-        text-align: center;
-      }
-      .blog-sidebar img {
-        max-width: 300px;
-        width: 100%;
+        margin: 20px auto 0;
+        justify-content: center;
       }
     }
   </style>
@@ -111,7 +106,7 @@
         </div>
       </article>
 
-      <!-- Post 3: Detox (Free Bottle promo) -->
+      <!-- Post 3: Detox -->
       <article class="photo-card" style="--bg: url('DetoxSS.png');">
         <div class="inner">
           <header style="margin-bottom:18px;">
@@ -134,7 +129,7 @@
         </div>
       </article>
 
-      <!-- Post 4: Membership Savings -->
+      <!-- Post 4: Membership -->
       <article class="photo-card" style="--bg: url('highest-quality-products.jpg');">
         <div class="inner">
           <header style="margin-bottom:18px;">
@@ -183,7 +178,6 @@
 
     <!-- ===== Right column banner ===== -->
     <aside class="blog-sidebar">
-      <!-- HealthTrader banner -->
       <a href="https://track.healthtrader.com/track.php?lid=765550&rid=217028&aid=14768580"
          target="_blank"
          rel="nofollow sponsored noopener">
