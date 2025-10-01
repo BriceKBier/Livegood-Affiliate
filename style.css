@@ -71,7 +71,7 @@ a.btn:hover {
 }
 .side-nav ul { list-style: none; padding: 0; margin: 0; }
 
-/* Make ALL sidebar links look like pill buttons by default */
+/* Make ALL sidebar links blue buttons */
 .side-nav a {
   display: block;
   padding: 10px 12px;
@@ -79,24 +79,18 @@ a.btn:hover {
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  background: #eef3fb;       /* light pill */
-  color: #162033;            /* readable on light bg */
+  background: var(--brand);
+  color: #fff !important;
   box-shadow: var(--shadow);
-  transition: transform .06s ease, background .15s ease, box-shadow .15s ease, color .15s ease;
+  transition: transform .06s ease, background .15s ease, box-shadow .15s ease;
 }
 .side-nav a:hover {
-  background: #dde9fb;
-  color: var(--brand-dark);
+  background: var(--brand-dark);
   transform: translateY(-1px);
   box-shadow: var(--shadow-hover);
 }
-/* Keep explicitly .btn links as primary blue inside the sidebar */
-.side-nav a.btn {
-  background: var(--brand);
-  color: #fff !important;
-}
 
-/* ===== Hero (anchored at top so it doesn't crop the top of the image) ===== */
+/* ===== Hero (anchored at top so it doesn't crop) ===== */
 .hero {
   position: relative;
   margin-left: var(--sidebar-width);
