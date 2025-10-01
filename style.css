@@ -165,16 +165,26 @@ a.btn:hover {
 .photo-card ul { color: #eee; }
 .photo-card .card-actions { margin-top: 16px; }
 
-/* ===== ASN Banner: force full-bleed, readable overlay ===== */
+/* ===== ASN Banner: full-bleed space background + semi-transparent text ===== */
 .photo-card.asn-banner {
   background-size: cover !important;     /* fill the box, crop if needed */
   background-position: center !important;
   background-repeat: no-repeat !important;
-  min-height: 320px;                     /* room for art + text */
+  min-height: 340px;                     /* room for art + text */
 }
+/* Remove dark overlay box so art shows fully; center text */
 .photo-card.asn-banner .inner {
-  --overlay: rgba(0,0,0,0.60);           /* a notch darker for readability */
+  --overlay: transparent;
   text-align: center;
+}
+/* Semi-transparent headline/body over the art */
+.photo-card.asn-banner h2,
+.photo-card.asn-banner p {
+  color: rgba(255,255,255,0.75);
+}
+/* Keep the button fully solid for contrast/accessibility */
+.photo-card.asn-banner .btn {
+  color: #fff !important;
 }
 
 /* ===== Contact Form ===== */
@@ -246,5 +256,5 @@ footer a:hover { color: var(--brand-dark); }
   .video-grid {
     grid-template-columns: 1fr;
   }
-  .photo-card.asn-banner { min-height: 260px; }
+  .photo-card.asn-banner { min-height: 280px; }
 }
