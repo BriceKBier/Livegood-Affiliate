@@ -117,3 +117,96 @@ h1,h2,h3{line-height:1.15;margin-top:0;color:var(--navy)}
   .hero-actions .btn{width:100%;text-align:center}
   .about-strip{padding:24px}
 }
+
+
+/* Version 3.1 refinements */
+.hero{
+  position:relative;
+  isolation:isolate;
+  background:
+    radial-gradient(circle at 18% 28%, rgba(201,154,69,.14), transparent 34%),
+    radial-gradient(circle at 82% 72%, rgba(47,107,79,.18), transparent 30%),
+    linear-gradient(135deg,#102a42 0%,#17324d 55%,#1b3a57 100%);
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  opacity:.22;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size:32px 32px;
+}
+.hero-grid{grid-template-columns:1.08fr .92fr}
+.hero-copy strong{color:#fff}
+.hero-intro{
+  margin-top:12px;
+  font-size:1.04rem;
+  color:#cfe0ea;
+  font-weight:700;
+}
+.trust-row{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-top:24px;
+  color:#dce9ef;
+  font-size:.92rem;
+  font-weight:700;
+}
+.trust-row span::before{
+  content:"✓";
+  color:#b9dccb;
+  font-weight:900;
+  margin-right:7px;
+}
+.portrait-wrap{max-width:475px}
+.portrait{
+  aspect-ratio:1/1.08;
+  object-position:center 33%;
+}
+.hero .btn-primary{box-shadow:0 10px 24px rgba(0,0,0,.18)}
+.hero .btn-light{background:rgba(255,255,255,.96)}
+.mini-bio{
+  margin-top:14px;
+  font-size:1rem;
+  color:#d8e5ec;
+}
+.mini-bio strong{color:#fff}
+.section-divider{
+  width:72px;
+  height:4px;
+  border-radius:999px;
+  background:var(--gold);
+  margin:18px 0 24px;
+}
+.card .text-link{display:inline-block;margin-top:6px}
+.article-image{
+  background:
+    linear-gradient(135deg,rgba(47,107,79,.9),rgba(23,50,77,.88));
+  color:white;
+  letter-spacing:.08em;
+}
+.home-highlights{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:34px;
+}
+.highlight{
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:20px;
+  background:#fff;
+}
+.highlight strong{
+  display:block;
+  color:var(--navy);
+  font-size:1.05rem;
+  margin-bottom:4px;
+}
+@media(max-width:900px){
+  .home-highlights{grid-template-columns:1fr}
+}
