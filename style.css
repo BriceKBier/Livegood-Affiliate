@@ -210,3 +210,142 @@ h1,h2,h3{line-height:1.15;margin-top:0;color:var(--navy)}
 @media(max-width:900px){
   .home-highlights{grid-template-columns:1fr}
 }
+
+
+/* Version 3.2: magazine cards and founder story */
+.mission-ribbon{
+  background:var(--green);
+  color:#fff;
+  padding:16px 0;
+  text-align:center;
+  font-weight:800;
+  letter-spacing:.01em;
+}
+.featured-section{background:#fff}
+.magazine-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+  margin-top:32px;
+}
+.magazine-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(23,50,77,.09);
+  transition:transform .22s ease, box-shadow .22s ease;
+}
+.magazine-card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 22px 48px rgba(23,50,77,.18);
+}
+.magazine-media{
+  min-height:250px;
+  display:flex;
+  align-items:flex-end;
+  padding:24px;
+  position:relative;
+  overflow:hidden;
+  color:white;
+}
+.magazine-media::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  transition:transform .45s ease;
+  background-size:cover;
+  background-position:center;
+}
+.magazine-card:hover .magazine-media::before{transform:scale(1.055)}
+.magazine-media::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(9,26,40,.72),rgba(9,26,40,.08) 68%);
+}
+.media-work::before{
+  background-image:
+    linear-gradient(135deg,rgba(25,70,102,.2),rgba(47,107,79,.18)),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80");
+}
+.media-health::before{
+  background-image:
+    linear-gradient(135deg,rgba(28,92,66,.16),rgba(23,50,77,.18)),
+    url("https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=80");
+}
+.media-livegood::before{
+  background-image:
+    linear-gradient(135deg,rgba(23,50,77,.12),rgba(47,107,79,.15)),
+    url("https://ucanworkfromhome.com/highest-quality-products.jpg");
+}
+.media-symbol{
+  position:relative;
+  z-index:2;
+  font-size:.82rem;
+  letter-spacing:.12em;
+  font-weight:900;
+  background:rgba(15,36,55,.78);
+  padding:9px 12px;
+  border-radius:999px;
+  backdrop-filter:blur(5px);
+}
+.magazine-content{padding:25px}
+.magazine-content h3{font-size:1.45rem;margin:.45rem 0 .75rem}
+.magazine-content p{color:var(--muted)}
+.story-section{background:var(--cream)}
+.story-grid{
+  display:grid;
+  grid-template-columns:.82fr 1.18fr;
+  gap:56px;
+  align-items:center;
+}
+.story-photo-wrap{position:relative;max-width:430px}
+.story-photo-wrap img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  object-position:center 35%;
+  border-radius:24px;
+  box-shadow:var(--shadow);
+}
+.location-badge{
+  position:absolute;
+  left:22px;
+  bottom:22px;
+  background:rgba(15,36,55,.9);
+  color:white;
+  padding:10px 14px;
+  border-radius:999px;
+  font-size:.85rem;
+  font-weight:800;
+  box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+.story-questions{
+  list-style:none;
+  margin:24px 0;
+  padding:0;
+}
+.story-questions li{
+  position:relative;
+  padding:10px 0 10px 32px;
+  border-bottom:1px solid rgba(23,50,77,.09);
+  font-weight:700;
+}
+.story-questions li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:var(--green);
+  font-weight:900;
+}
+.signature{
+  font-family:Georgia,serif;
+  font-size:1.25rem;
+  color:var(--navy);
+  margin:18px 0 22px;
+}
+@media(max-width:900px){
+  .magazine-grid,.story-grid{grid-template-columns:1fr}
+  .story-photo-wrap{max-width:520px;margin:auto}
+}
