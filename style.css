@@ -219,3 +219,138 @@ h1,h2,h3{line-height:1.15;margin-top:0;color:var(--navy)}
   .author-box{grid-template-columns:1fr;text-align:center}
   .author-box img{margin:auto}
 }
+
+
+/* ===== Version 4.1 Premium Polish ===== */
+:root{
+  --cream:#f8f4ec;
+  --gold:#d2a24d;
+  --shadow:0 18px 48px rgba(15,36,55,.13);
+  --shadow-lg:0 30px 78px rgba(15,36,55,.22);
+}
+body{
+  text-rendering:optimizeLegibility;
+}
+.site-header{
+  box-shadow:0 4px 20px rgba(15,36,55,.035);
+}
+.header-inner{
+  min-height:82px;
+}
+.brand{
+  font-size:1.55rem;
+}
+.hero{
+  padding:96px 0 86px;
+}
+.hero-grid{
+  gap:78px;
+}
+.hero-content{
+  position:relative;
+}
+.hero-content::before{
+  content:"";
+  position:absolute;
+  left:-28px;
+  top:2px;
+  width:4px;
+  height:82px;
+  border-radius:999px;
+  background:linear-gradient(var(--gold),rgba(210,162,77,.12));
+}
+.hero h1{
+  font-size:clamp(2.9rem,5.2vw,5.05rem);
+  max-width:760px;
+}
+.hero-copy{
+  font-size:1.2rem;
+  line-height:1.72;
+}
+.portrait-wrap{
+  max-width:500px;
+}
+.portrait{
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 34px 88px rgba(0,0,0,.38);
+}
+.portrait-caption{
+  box-shadow:0 12px 32px rgba(0,0,0,.2);
+}
+.credibility-grid strong{
+  font-size:1.02rem;
+}
+.credibility-grid span{
+  line-height:1.5;
+}
+.section{
+  padding:86px 0;
+}
+.section-title{
+  max-width:860px;
+}
+.promise{
+  border-top:5px solid var(--green);
+}
+.topic-card{
+  position:relative;
+  overflow:hidden;
+}
+.topic-card::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0 0;
+  height:4px;
+  background:linear-gradient(90deg,var(--green),var(--gold));
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .22s ease;
+}
+.topic-card:hover::after{
+  transform:scaleX(1);
+}
+.featured-section{
+  position:relative;
+}
+.featured-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle at 88% 18%,rgba(47,107,79,.055),transparent 28%);
+}
+.magazine-card{
+  border-color:#d9e2e6;
+}
+.magazine-media{
+  min-height:270px;
+}
+.step-badge{
+  box-shadow:0 8px 20px rgba(15,36,55,.14);
+}
+.magazine-content{
+  padding:28px;
+}
+.magazine-content h3{
+  font-size:1.5rem;
+}
+.story-photo-wrap img{
+  box-shadow:0 28px 64px rgba(15,36,55,.2);
+}
+.newsletter-card{
+  background:
+    radial-gradient(circle at 90% 20%,rgba(255,255,255,.11),transparent 28%),
+    linear-gradient(135deg,var(--green-dark),var(--green));
+}
+.btn{
+  box-shadow:0 8px 20px rgba(15,36,55,.09);
+}
+.btn:hover{
+  transform:translateY(-3px);
+}
+.footer{
+  border-top:5px solid var(--green);
+}
+@media(max-width:900px){
+  .hero-content::before{display:none}
+}
