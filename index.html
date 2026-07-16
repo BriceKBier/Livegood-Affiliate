@@ -31,7 +31,10 @@
     <a class="brand" href="index.html" aria-label="UCanWorkFromHome home">
       <span class="brand-ucan">UCan</span><span class="brand-rest">WorkFromHome</span>
     </a>
-    <nav class="nav" aria-label="Main navigation">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav" id="primary-navigation" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="#start-here">Start Here</a>
       <a href="blog.html">Articles</a>
@@ -69,7 +72,7 @@
   </div>
 </section>
 
-<section class="credibility-bar">
+<section class="credibility-bar reveal">
   <div class="container credibility-grid">
     <div><strong>Made for life after 50</strong><span>Health, income and retirement ideas in one place.</span></div>
     <div><strong>Useful, not overwhelming</strong><span>Plain-English explanations and practical next steps.</span></div>
@@ -77,7 +80,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section reveal">
   <div class="container intro-grid">
     <div>
       <div class="section-kicker">Welcome</div>
@@ -97,7 +100,7 @@
   </div>
 </section>
 
-<section class="section section-soft">
+<section class="section section-soft reveal">
   <div class="container">
     <div class="section-heading-row">
       <div>
@@ -115,7 +118,7 @@
   </div>
 </section>
 
-<section class="section featured-section" id="start-here">
+<section class="section featured-section reveal" id="start-here">
   <div class="container">
     <div class="section-kicker">Choose your path</div>
     <h2 class="section-title">What would help you most today?</h2>
@@ -164,7 +167,7 @@
   </div>
 </section>
 
-<section class="section story-section">
+<section class="section story-section reveal">
   <div class="container story-grid">
     <div class="story-photo-wrap">
       <img src="brice-bier.jpg" alt="Brice Bier at the beach in Myrtle Beach">
@@ -187,7 +190,24 @@
   </div>
 </section>
 
-<section class="section newsletter-section">
+<section class="section trust-section reveal" aria-labelledby="why-trust-title">
+  <div class="container">
+    <div class="trust-panel">
+      <div class="trust-heading">
+        <div class="section-kicker">Why trust this site?</div>
+        <h2 class="section-title" id="why-trust-title">A real person, a clear purpose and no pressure</h2>
+        <p class="lede">UCanWorkFromHome is built around straightforward research and practical experience—not anonymous content or overnight-success promises.</p>
+      </div>
+      <div class="trust-principles">
+        <div class="trust-principle"><span>01</span><div><strong>Personal accountability</strong><p>Every recommendation appears under my name, so I take accuracy and fairness seriously.</p></div></div>
+        <div class="trust-principle"><span>02</span><div><strong>Balanced information</strong><p>I aim to explain advantages, drawbacks, costs and important questions before you decide.</p></div></div>
+        <div class="trust-principle"><span>03</span><div><strong>Your decision comes first</strong><p>The goal is to help you understand your options—not pressure you into buying something.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section newsletter-section reveal">
   <div class="container newsletter-card">
     <div>
       <div class="section-kicker">Stay connected</div>
@@ -198,7 +218,7 @@
   </div>
 </section>
 
-<section class="section" id="contact">
+<section class="section reveal" id="contact">
   <div class="container content-width">
     <div class="section-kicker">Get in touch</div>
     <h2 class="section-title">Questions are welcome</h2>
@@ -234,5 +254,46 @@
     </div>
   </div>
 </footer>
+<script>
+(function () {
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('primary-navigation');
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      toggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+      nav.classList.toggle('is-open', !open);
+      document.body.classList.toggle('menu-open', !open);
+    });
+
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+        nav.classList.remove('is-open');
+        document.body.classList.remove('menu-open');
+      });
+    });
+  }
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealItems = document.querySelectorAll('.reveal');
+  if (reducedMotion || !('IntersectionObserver' in window)) {
+    revealItems.forEach(function (item) { item.classList.add('is-visible'); });
+  } else {
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+    revealItems.forEach(function (item) { observer.observe(item); });
+  }
+})();
+</script>
 </body>
 </html>
