@@ -1,0 +1,3 @@
+UCanWorkFromHome Project Status — Version 6.2 Natural Photo Fix
+
+Homepage hero rebuilt as three columns. Original Brice photo is displayed in full at its natural 4:3 aspect ratio with object-fit: contain. No cropping and no blank top/bottom panel space.
