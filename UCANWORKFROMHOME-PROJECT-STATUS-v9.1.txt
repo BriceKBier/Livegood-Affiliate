@@ -1,0 +1,16 @@
+UCanWorkFromHome Project Status — Version 9.1
+Date: July 19, 2026
+
+Purpose of this correction:
+Restore LiveGood as the unmistakable primary focus of the website.
+
+Changes completed:
+- Added a prominent LiveGood action bar directly below the header on every HTML page.
+- Added direct buttons to Brice's LiveGood customer/product page and free business tour.
+- Added a large two-path LiveGood call-to-action near the top of the Is LiveGood Worth It article.
+- Kept the balanced editorial content while making the desired customer/member actions immediately visible.
+- Added responsive mobile styling for the new buttons and panels.
+
+Primary links:
+Products / Membership: https://www.livegood.com/Brice
+Free Business Tour: https://www.livegoodtour.com/Brice

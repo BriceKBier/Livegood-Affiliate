@@ -1,0 +1,3 @@
+LOCAL LINK VALIDATION
+PASS — no missing local files.
+PASS — no unresolved placeholders.

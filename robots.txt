@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://bricekbier.github.io/Livegood-Affiliate/sitemap.xml
+Sitemap: https://ucanworkfromhome.com/sitemap.xml
