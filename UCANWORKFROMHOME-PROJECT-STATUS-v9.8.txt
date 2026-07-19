@@ -1,0 +1,14 @@
+UCANWORKFROMHOME PROJECT STATUS — VERSION 9.8
+Date: July 19, 2026
+
+CHANGE COMPLETED
+- Restyled the LiveGood Super Greens comparison section to more closely resemble the clean LiveGood website graphic supplied by Brice.
+- Expanded the comparison to a prominent full-width presentation on desktop.
+- Added a light green highlighted LiveGood column with green borders.
+- Changed the table to a cleaner white/soft-gray row layout and stronger YES/checkmark treatment.
+- Enlarged the “Experience the LiveGood Difference” heading.
+- Preserved the current comparison wording and disclosure note.
+- Maintained horizontal scrolling for smaller screens.
+
+WORKFLOW
+Upload the complete Version 9.8 folder contents to the homepage-redesign branch, preview, then merge into main when approved.
