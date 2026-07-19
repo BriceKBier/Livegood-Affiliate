@@ -1,0 +1,28 @@
+UCANWORKFROMHOME PROJECT STATUS — VERSION 7.0
+Date: July 18, 2026
+
+STATUS
+Version 6.2 is live on main.
+Version 7.0 is a complete redesign package for preview on homepage-redesign.
+
+NEW IN 7.0
+- New homepage with a full-width drone-photo hero
+- Myrtle Beach From Above gallery using Brice's original images
+- Brice Recommends page
+- Tello Mobile section
+- Travel rewards / Amex section
+- Stronger personal lifestyle brand
+
+WORKFLOW
+1. Extract ZIP.
+2. Open index.html locally.
+3. Upload all files to homepage-redesign.
+4. Review GitHub Pages preview.
+5. Do not merge to main until approved.
+
+
+REAL ESTATE BIO CORRECTION
+- Brice practiced real estate for nine years.
+- He is no longer actively practicing.
+- He remains licensed in South Carolina with Innovate Real Estate.
+- He continues to accept real estate referrals.

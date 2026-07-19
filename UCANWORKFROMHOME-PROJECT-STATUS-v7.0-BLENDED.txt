@@ -1,0 +1,16 @@
+UCANWORKFROMHOME VERSION 7.0 — BLENDED HERO REVISION
+Date: July 18, 2026
+
+CURRENT WORKING BRANCH
+homepage-redesign
+
+CHANGES IN THIS PACKAGE
+- Rebuilt homepage hero with Brice's portrait softly blended into his original coastal sunset drone photograph.
+- Preserved readable, high-contrast white hero text.
+- Corrected dark-on-dark headings and body text on Brice Recommends cards.
+- Strengthened contrast across dark panels and recommendation cards.
+- Improved standalone Version 7 page hero spacing and header/logo spacing.
+- Preserved corrected real-estate biography: practiced nine years, no longer actively practicing, still SC licensed with Innovate Real Estate, accepts referrals.
+
+WORKFLOW
+Extract ZIP, open index.html locally, review major pages, then upload all files to homepage-redesign only.
