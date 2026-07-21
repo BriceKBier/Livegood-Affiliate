@@ -1,0 +1,27 @@
+UCANWORKFROMHOME.COM PROJECT STATUS — VERSION 10.5
+Date: July 21, 2026
+
+COMPLETED IN THIS VERSION
+- Added a new Fun & Fascinating section to the website.
+- Created fun.html as a permanent home for puzzles, illusions, experiments and interesting web discoveries.
+- Featured Clifford Pickover's ESP mind-reading experiment with a prominent external-link button.
+- Added a second link to Clifford Pickover's larger collection of puzzles, computer art, fractals, science and curiosities.
+- Added Fun to the main navigation across the site's HTML pages.
+- Added Fun & Fascinating to the homepage resource pillars and guide cards.
+- Added clear external-site wording so visitors understand the experiment is hosted elsewhere and is not affiliated with UCanWorkFromHome.
+- Updated sitemap.xml.
+- Added responsive styling for desktop, tablet and mobile.
+
+PRIMARY FILES CHANGED
+- fun.html (new)
+- index.html
+- style.css
+- sitemap.xml
+- Main navigation across existing HTML pages
+
+EXTERNAL ATTRACTION LINKS
+- ESP experiment: https://sprott.physics.wisc.edu/pickover/esp.html
+- Clifford Pickover home page: https://sprott.physics.wisc.edu/pickover/home.htm
+
+WORKFLOW
+Upload the complete contents of this package to the GitHub homepage-redesign branch, replacing the prior version files. Then review the GitHub Pages preview before publishing to the live branch.
