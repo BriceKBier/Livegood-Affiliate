@@ -846,6 +846,10 @@ body{
 .income-opportunity-card h3{font-family:Georgia,serif;font-size:2rem;color:var(--navy);margin:.7rem 0 1rem}
 .income-opportunity-card p{color:var(--muted);line-height:1.7}
 .featured-opportunity{border-top:6px solid #18764c}
+.mypoints-opportunity{border-top:6px solid #2f8b57}
+.mypoints-opportunity .opportunity-badge{background:#e8f5ec;color:#216b42}
+.mypoints-opportunity .btn-primary{background:#2f8b57;border-color:#2f8b57}
+.mypoints-opportunity .btn-primary:hover{background:#267449;border-color:#267449}
 .future-opportunity{background:#f2f6f3;display:flex;flex-direction:column;justify-content:center}
 .opportunity-badge{display:inline-block;width:max-content;background:#e7f2ec;color:#146440;border-radius:999px;padding:8px 12px;font-size:.72rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
 .opportunity-details{list-style:none;padding:0;margin:24px 0;display:grid;gap:10px}
