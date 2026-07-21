@@ -1,0 +1,17 @@
+UCANWORKFROMHOME PROJECT STATUS — VERSION 11.0 DISCOVERY
+Date: July 21, 2026
+
+CURRENT BASELINE
+Version 11.0 — DISCOVERY is the current working baseline.
+
+COMPLETED
+- Homepage reorganized around Earn, Brain Playground and Learn.
+- Brice’s Pick and New This Week added.
+- Surprise Me random navigation added and tested in code.
+- Fun & Fascinating renamed Brain Playground.
+- Live Science 35 Optical Illusions attraction added.
+- Existing MyPoints, Magic Eye and ESP content preserved.
+- New status and README files included.
+
+NEXT REVIEW
+Upload to GitHub homepage-redesign branch and inspect the preview on desktop and mobile.

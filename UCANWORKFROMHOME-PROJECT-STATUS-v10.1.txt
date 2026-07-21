@@ -1,0 +1,20 @@
+UCanWorkFromHome Project Status — Version 10.1
+Date: July 19, 2026
+
+VERSION 10.1 COMPLETED
+
+AVIATION CORNER UPDATE
+- Added a Featured Aviation Channels section to aviation.html.
+- Added 12 channels personally selected or approved by Brice:
+  Cockpit Casual, BaronPilot, blancolirio, Fly With Kay, Mayday Air Disaster, Pilot Debrief, Rebuild Rescue, The Challenger Pilot, The Real Jimmy's World, Mentour Pilot, VASaviation, and 74 Gear.
+- Organized channel cards by topic, including airline flying, general aviation, safety, ATC, restoration and aviation adventures.
+- Added direct Visit Channel buttons opening YouTube in a new tab.
+- Added Featured Channels navigation chip near the top of the aviation page.
+- Kept the aviation section non-commercial, with no affiliate links or sales offers.
+- Existing nine featured aviation videos remain unchanged.
+
+WORKFLOW
+- Extract the Version 10.1 ZIP.
+- Open aviation.html locally for review.
+- Upload complete files to the GitHub homepage-redesign branch.
+- Review the preview before merging into main.

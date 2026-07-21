@@ -1,0 +1,22 @@
+UCANWORKFROMHOME.COM PROJECT STATUS — VERSION 10.6
+Date: July 21, 2026
+
+COMPLETED IN THIS VERSION
+- Added a 3D Magic Eye stereogram attraction to the Fun & Fascinating page.
+- Positioned it as the second featured attraction after the ESP mind-reading experiment.
+- Added beginner-friendly viewing guidance: relax the eyes and look through the image rather than directly at it.
+- Added clear labels noting that examples, tips and solutions are included.
+- Added an external-site disclaimer and configured the attraction to open in a new tab.
+- Expanded the Fun & Fascinating card grid to support three attractions on desktop, two on tablet and one on mobile.
+- Preserved all Version 10.5 features and links.
+
+PRIMARY FILES CHANGED
+- fun.html
+- style.css
+
+EXTERNAL ATTRACTION ADDED
+- 3D Magic Eye stereograms:
+  https://themagiceye3d.com/2025/07/19/easy-stereogram-pictures-with-solutions-included/
+
+WORKFLOW
+Upload the complete contents of this package to the GitHub homepage-redesign branch, replacing the prior version files. Then review the GitHub Pages preview before publishing to the live branch.

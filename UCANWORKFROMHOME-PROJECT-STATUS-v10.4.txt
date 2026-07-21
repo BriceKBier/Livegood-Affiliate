@@ -1,0 +1,19 @@
+UCANWORKFROMHOME.COM PROJECT STATUS — VERSION 10.4
+Date: July 21, 2026
+
+COMPLETED IN THIS VERSION
+- Added MyPoints to the Ways to Earn Extra Income page.
+- Placed the new MyPoints card immediately after UniqueRewards.
+- Added Brice's referral link:
+  https://www.mypoints.com/?rb=xjtLIrF9qONLQ033&rp=1
+- Added clear Best for, Cost to explore, and Expectation details.
+- Added a referral disclosure.
+- Added a green visual accent and matching button treatment for the MyPoints card.
+- Updated the UniqueRewards follow-on link so it points directly to MyPoints.
+
+PRIMARY FILES CHANGED
+- ways-to-earn-extra-income.html
+- style.css
+
+WORKFLOW
+Upload the complete contents of this package to the GitHub homepage-redesign branch, replacing the prior version files. Then review the GitHub Pages preview before publishing to the live branch.
