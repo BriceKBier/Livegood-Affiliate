@@ -1,0 +1,49 @@
+UCANWORKFROMHOME PROJECT STATUS — VERSION 12.7 ANIMAL PHOTO UPLOAD FIX
+Date: July 23, 2026
+
+CURRENT BASELINE
+Version 12.7 — ANIMAL PHOTO UPLOAD FIX is the current preview candidate.
+
+COMPLETED
+- Continued from the approved Version 11 Analytics and SEO foundation.
+- Preserved the Discovery design and all existing content.
+- Added canonical URLs, unique descriptions, Open Graph information and
+  structured data across all 25 pages.
+- Preserved the established Discovery navigation.
+- Added share and copy-link controls to all 20 practical content pages.
+- Added attraction-specific sharing to Brain Playground.
+- Added Analytics campaign tracking to reader-shared links.
+- Added the homepage "Ask the Wizard" repair helper with a custom illustration.
+- Readers can prepare a detailed repair question for ChatGPT or search YouTube.
+- Added clear household-repair safety guidance and Analytics interaction events.
+- Added "Amazing Animals" with a rotating Animal of the Week.
+- Added 12 complete profiles, trusted source links, an archive and animal sharing.
+- Added a custom 12-animal illustration and homepage preview.
+- Added 12 realistic profile images.
+- Replaced general YouTube searches with a specific National Geographic video
+  for every animal in the collection.
+- Replaced kid-oriented choices with regular National Geographic and Nat Geo
+  WILD programs intended for a general audience.
+- Changed the controls to open the exact YouTube video directly, preventing
+  embedded-player Error 153 during local preview.
+- Moved all 12 animal photos from a subfolder into the main website folder so
+  GitHub's browser uploader accepts them with the other top-level files.
+- Added a "Kids & Grandkids — Coming Soon" homepage button.
+- Future starting subjects: basic addition, subtraction and spelling.
+- Added prominent homepage shortcuts for all three new features.
+- Added an official LiveGood product grouping beside the shopping buttons.
+- Enlarged the LiveGood product grouping for improved visibility in Version 12.2.
+- Added four rotating groups of three LiveGood products for Version 12.3.
+- Corrected the rotation behavior and added a visible group counter in Version 12.4.
+- Preserved Google Analytics on all pages.
+- Updated the sitemap to include all 25 canonical URLs.
+- Passed local-link, asset, Analytics, metadata, schema and navigation checks.
+
+NEXT REVIEW
+Brice should preview index.html, over-60.html, aviation.html, fun.html and
+ways-to-earn-extra-income.html locally. Upload to homepage-redesign only after
+the preview is approved.
+
+WORKFLOW
+Continue using complete downloadable ZIP packages. Keep main unchanged until
+Brice gives final approval.
