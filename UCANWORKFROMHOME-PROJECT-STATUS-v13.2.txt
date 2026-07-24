@@ -1,0 +1,25 @@
+UCANWORKFROMHOME PROJECT STATUS — VERSION 13.2 TOP AND BOTTOM SHARING
+Date: July 23, 2026
+
+CURRENT BASELINE
+Version 13.2 — TOP AND BOTTOM SHARING is the current preview candidate.
+
+COMPLETED
+- Corrected the missing top-of-page sharing controls.
+- Added Facebook, Text, More options and Copy link near the top of all 22
+  shareable pages.
+- Preserved all four choices in the bottom sharing panels.
+- Preserved prepared text-message content and Analytics sharing events.
+- Preserved the COA feature, Kids animal section and all prior content.
+- Preserved all 26 pages, Analytics, sitemap, metadata and navigation.
+- Passed local-link, asset, JavaScript, metadata and sitemap checks.
+
+NEXT REVIEW
+Brice should extract Version 13.2 and open index.html. Confirm all four buttons
+appear near the top and again at the bottom. The Text action itself is best
+tested after publication from a phone.
+
+WORKFLOW
+After preview approval, upload every Version 13.2 file to homepage-redesign,
+commit as "Publish Version 13.2 — Top and Bottom Sharing", open a pull request
+into main, wait for all checks to pass, then merge.
