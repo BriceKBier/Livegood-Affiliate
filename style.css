@@ -1272,3 +1272,51 @@ nav a.active{color:#9a6a13;font-weight:800}
   .livegood-product-display img{width:94px;max-height:145px}
   .livegood-product-display img:nth-child(2){left:69px;width:102px}
 }
+
+/* Version 12.8 — Amazing Animals for Kids */
+.kids-animals-hero{background:linear-gradient(145deg,#dff4ff,#fff1bd)}
+.kids-animals-page .animal-week{background:linear-gradient(145deg,#174d68,#5c327b)}
+.kids-animals-page .animal-feature{border:5px solid rgba(255,255,255,.24)}
+.kids-animals-page .animal-card.current-week:after{background:#ffcf58;color:#5b3e00}
+.kids-question{display:flex;align-items:flex-start;gap:12px;margin-top:22px;padding:18px 20px;border:2px dashed #d9a636;border-radius:16px;background:#fff7d9;color:#294653;line-height:1.55}
+.kids-question strong{flex:0 0 auto;color:#6d347c}
+.kids-coming-soon{cursor:pointer}
+@media(max-width:600px){.kids-question{flex-direction:column}}
+
+/* Version 12.9 — LiveGood product transparency */
+.coa-feature{display:grid;grid-template-columns:112px 1fr;gap:30px;margin:34px 0 42px;padding:34px;border:1px solid #d7e5df;border-radius:24px;background:linear-gradient(145deg,#f0f8f4,#fff8e8);box-shadow:0 18px 44px rgba(18,49,67,.11)}
+.coa-seal{display:grid;place-items:center;align-content:center;width:112px;height:112px;border:5px solid #287254;border-radius:50%;background:#fff;color:#17664d;box-shadow:0 10px 25px rgba(23,102,77,.16)}
+.coa-seal span{font-size:2.5rem;font-weight:900;line-height:1}.coa-seal small{margin-top:4px;font-size:.67rem;font-weight:900;letter-spacing:.08em;text-align:center}
+.coa-copy h2{margin:4px 0 10px;color:#123143;font-size:clamp(2rem,4vw,3.1rem)}.coa-lede{max-width:800px;color:#425e6b;font-size:1.08rem;line-height:1.65}
+.coa-points{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0}.coa-points>div{display:flex;flex-direction:column;gap:5px;padding:16px;border:1px solid #dbe6e2;border-radius:14px;background:rgba(255,255,255,.82)}.coa-points strong{color:#17664d}.coa-points span{color:#58707b;font-size:.93rem;line-height:1.45}
+.coa-actions{display:flex;flex-wrap:wrap;align-items:center;gap:11px;margin-top:20px}.coa-note{margin:18px 0 0;padding-top:16px;border-top:1px solid #d7e3df;color:#667984;font-size:.86rem;line-height:1.55}
+.coa-home-teaser{padding:28px 0;background:#fff}.coa-home-inner{display:grid;grid-template-columns:72px 1fr auto;align-items:center;gap:24px;padding:24px 28px;border:1px solid #d7e5df;border-radius:20px;background:linear-gradient(135deg,#edf7f2,#fff7df);box-shadow:0 12px 30px rgba(18,49,67,.09)}.coa-home-icon{display:grid;place-items:center;width:68px;height:68px;border-radius:50%;background:#287254;color:#fff;font-size:2rem;font-weight:900}.coa-home-inner h2{margin:3px 0 5px;color:#123143;font-size:clamp(1.45rem,3vw,2.15rem)}.coa-home-inner p:not(.eyebrow){margin:0;color:#526a76;line-height:1.5}
+@media(max-width:850px){.coa-feature{grid-template-columns:1fr}.coa-seal{width:90px;height:90px}.coa-points{grid-template-columns:1fr}.coa-home-inner{grid-template-columns:60px 1fr}.coa-home-icon{width:56px;height:56px}.coa-home-inner .btn{grid-column:1/-1;text-align:center}}
+@media(max-width:520px){.coa-feature{padding:24px 20px}.coa-home-inner{grid-template-columns:1fr;padding:22px}.coa-home-icon{width:52px;height:52px}}
+
+/* Version 13.1 — direct Facebook and clearly visible text sharing */
+.share-facebook{background:#1877f2;color:#fff;border-color:#1877f2}
+.share-facebook:hover{background:#0f66da;border-color:#0f66da}
+.share-text-message{display:inline-flex;background:#2c9a57;color:#fff;border-color:#2c9a57}
+.share-text-message:hover{background:#237f48;border-color:#237f48}
+@media(max-width:850px){
+  .content-share-actions{gap:9px}
+  .content-share-actions .share-action{justify-content:center}
+}
+@media(max-width:520px){
+  .content-share-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}
+  .content-share-actions .share-action{width:100%;box-sizing:border-box}
+}
+
+/* Version 13.2 — sharing controls at the top and bottom */
+.top-share-strip{position:relative;z-index:4;padding:10px 0;border-bottom:1px solid #dce5e2;background:#f7faf9}
+.top-share-inner{display:flex;align-items:center;justify-content:flex-end;gap:14px}
+.top-share-inner>strong{color:#526a76;font-size:.84rem}
+.top-share-actions{display:flex;flex-wrap:wrap;gap:7px}
+.top-share-actions .share-action{min-height:34px;padding:8px 13px;font-size:.78rem;line-height:1}
+.share-more{background:#17664d;color:#fff;border-color:#17664d}
+@media(max-width:700px){
+  .top-share-inner{align-items:flex-start;justify-content:flex-start;flex-direction:column;gap:7px}
+  .top-share-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}
+  .top-share-actions .share-action{justify-content:center;width:100%;box-sizing:border-box}
+}
