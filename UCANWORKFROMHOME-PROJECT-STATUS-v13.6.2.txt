@@ -1,0 +1,24 @@
+UCANWORKFROMHOME PROJECT STATUS — VERSION 13.6.2
+Date: July 24, 2026
+
+CURRENT WORKING BASELINE
+Version 13.6.2 continues from the complete Version 13.5.2 package.
+
+COMPLETED IN THIS VERSION
+- Incorporated Brice’s six-box kindergarten counting idea into math-k3.html.
+- The child may choose the six boxes in any order.
+- The first chosen box reveals 1 and says “One.”
+- Each new box continues in sequence through 6.
+- Each reveal uses a brief cheerful pulse rather than nonstop blinking.
+- Every counted box remains highlighted with a bright glow, making the total
+  number of selected boxes easy to see.
+- Replaced the yellow highlight with a much stronger blue-and-white glow.
+- Improved speech selection to favor more natural voices and softened the
+  speaking speed and pitch.
+- After all six boxes are selected, the activity celebrates completion.
+- The Mix the boxes button clears and rearranges the activity.
+- Existing K–3 narrated picture lessons remain unchanged.
+
+WORKFLOW
+Download the complete Version 13.6.2 ZIP and upload its contents to the
+homepage-redesign branch. Review the GitHub Pages preview before publishing live.
