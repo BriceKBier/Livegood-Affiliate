@@ -1,0 +1,38 @@
+UCANWORKFROMHOME PROJECT STATUS — VERSION 13.11.1
+Date: July 25, 2026
+
+CURRENT BASELINE
+- Version 13.11.1 is the upload-ready continuation of Version 13.11.0.
+- It preserves the Kids & Grandkids Learning Hub, 49-animal explorer,
+  K–3 Math Adventures, sharing features, COA content and all prior improvements.
+
+ANALYTICS REPAIR
+- Google Analytics had stopped receiving data because all 28 HTML pages used
+  the retired measurement ID G-QBRV8N7K2B.
+- Every HTML page now uses the active GA4 measurement ID G-9D5KVQW06L.
+- Brice's home HTC public IP was defined as internal traffic in GA4.
+- The Internal Traffic exclusion filter was activated.
+- Home-network visits should no longer appear in future Analytics reports.
+- Visits through a VPN, cellular connection or a different public IP may still
+  be counted.
+
+SEARCH AND SITEMAP
+- sitemap.xml contains all 28 public pages.
+- The homepage is correctly represented by https://ucanworkfromhome.com/.
+- Sitemap last-modified dates were updated to July 25, 2026.
+
+NEXT STEPS
+1. Upload the complete contents of the Version 13.11.1 folder to the live
+   GitHub branch using the established complete-file upload workflow.
+2. Open the live homepage with the VPN off.
+3. Confirm in Google Analytics Realtime that data collection resumes. Because
+   the home-IP exclusion is active, use a cellular connection for this test or
+   temporarily test from a different connection.
+4. In Google Search Console, request indexing for the homepage.
+5. Resubmit https://ucanworkfromhome.com/sitemap.xml.
+
+IMPORTANT
+- If HTC changes Brice's public IP address, update the GA4 "Brice home"
+  internal-traffic rule.
+- When the VPN is active, Analytics sees the VPN address and may count Brice as
+  an outside visitor.
