@@ -1,3 +1,5 @@
 LOCAL LINK VALIDATION
 PASS — no missing local files.
 PASS — no unresolved placeholders.
+PASS — all 28 HTML pages use Google Analytics ID G-9D5KVQW06L.
+PASS — sitemap.xml includes all 28 public HTML pages.
