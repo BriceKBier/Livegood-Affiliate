@@ -1,0 +1,77 @@
+UCANWORKFROMHOME PROJECT STATUS — VERSION 13.8.0
+Date: July 24, 2026
+
+CURRENT WORKING BASELINE
+Version 13.8.0 continues from the completed Version 13.7.0 package.
+
+COMPLETED IN THIS VERSION
+- Expanded each grade from three to six regular Logic Challenges.
+- Added three advanced Trophy Round challenges to every grade.
+- Kindergarten advanced work includes longer patterns, growing patterns and
+  identifying which object does not belong.
+- Grade 1 advanced work includes two-part classification, odd/even grouping and
+  rules using two conditions.
+- Grade 2 advanced work includes two-step machines, hidden rules and conditional
+  number operations.
+- Grade 3 advanced work includes multi-step robot commands, operation order and
+  combined robot conditions.
+- Six regular stars unlock the advanced round.
+- Three advanced answers award an animated gold trophy.
+- Trophy awards persist on the same computer using local browser storage.
+- Existing math stories and the kindergarten counting-box activity are preserved.
+
+WORKFLOW
+Download the complete Version 13.8.0 ZIP and upload its contents to the
+homepage-redesign branch. Review the preview before merging into main.
+VERSION 13.8.1 ADDENDUM
+- Original optional big-band-style homepage music with play, pause and volume.
+- Original children's victory song and fireworks after the third gold trophy.
+- No copyrighted commercial recording is included.
+VERSION 13.8.2 ADDENDUM
+- Music and fireworks now reward every completed Trophy Round.
+- The third overall trophy retains the larger Super Learner celebration.
+VERSION 13.8.3 ADDENDUM
+- All Kindergarten dialogue is now warmer, shorter and age-appropriate for
+  children around ages four and five, including questions, hints, praise,
+  instructions, controls and the full trophy experience.
+VERSION 13.8.4 ADDENDUM
+- Kindergarten praise now uses "Very good" instead of "Yay."
+- Voice selection and speech pace were refined for a less robotic sound.
+VERSION 13.9.0 ADDENDUM
+- Personalized, persistent Trophy Shelf added to Math Adventures.
+- Child's locally saved name is engraved on each earned grade-level trophy.
+- First-trophy name prompt, returning-player shelf and Change player control.
+VERSION 13.9.1 ADDENDUM
+- Trophy ownership is now saved separately by grade.
+- Every level entry asks who is playing; each trophy may show a different name.
+- Removed the global player name and Change player name control.
+- Added an always-visible K, 1, 2 and 3 mini shelf while Math Adventures is open.
+VERSION 13.9.2 ADDENDUM
+- Added a deeper male announcer voice for personalized trophy congratulations.
+- Victory music begins after the spoken trophy announcement.
+VERSION 13.9.3 ADDENDUM
+- Player-name prompts always begin blank.
+- Trophy names and awards now last only until Math Adventures is exited.
+- Older saved player and trophy data is cleared.
+VERSION 13.9.4 ADDENDUM
+- Corrected the opening sequence to Choose Grade → Enter Name → Play.
+- Removed the duplicate name prompt caused by automatic Kindergarten loading.
+VERSION 13.9.5 ADDENDUM
+- Final opening flow: Choose a Grade button → Enter Name → Select Grade → Play.
+- The selected grade no longer repeats the name request.
+VERSION 13.10.0 ADDENDUM
+- Added a searchable, child-safe Animal Explorer to kids.html.
+- Search uses the curated animal library and trusted video selections.
+- Added animal aliases, quick suggestions and a friendly unknown-animal response.
+VERSION 13.10.1 ADDENDUM
+- Animal Explorer now contains 49 searchable animal profiles.
+- Fixed shark search and added many common land, ocean, farm, bird and insect choices.
+- Page order is now animal hero, search, feature, collection, then Math Adventures.
+VERSION 13.10.2 ADDENDUM
+- Fixed the script typo that prevented the expanded 49-animal grid from displaying.
+- Automated page simulation confirms that 49 animal cards are generated.
+VERSION 13.11.0 ADDENDUM
+- Added kids-learning.html as the central Kids & Grandkids subject-selection page.
+- Live subject boxes link to Animals You Love and All About Numbers.
+- Reading, Spelling and History are displayed as future-content placeholders.
+- Homepage Kids & Grandkids navigation now leads to the new learning hub.
