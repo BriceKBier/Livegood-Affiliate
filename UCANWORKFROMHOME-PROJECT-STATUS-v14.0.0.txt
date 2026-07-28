@@ -1,0 +1,27 @@
+UCanWorkFromHome Project Status — Version 14.0.0
+Date: July 28, 2026
+
+BASELINE
+- Built from UCanWorkFromHome v13.11.1.
+- All existing pages, images, audio, scripts and site resources were preserved.
+
+PRIMARY CHANGE
+- Rebuilt the homepage around LiveGood as the clear primary focus.
+- Added a dedicated new stylesheet: v14-home.css.
+- No other page was redesigned in this version.
+
+NEW HOMEPAGE STRUCTURE
+1. Clean navigation focused on LiveGood and key destinations.
+2. Premium LiveGood hero with Shop, Free Tour and Membership actions.
+3. Quick trust/value facts.
+4. Why LiveGood section: wellness, value and optional opportunity.
+5. Featured product showcase.
+6. Personal Brice Bier trust section.
+7. Certificates of Analysis / transparency section.
+8. Compact Explore More cards for the site's non-LiveGood features.
+9. Focused final call to action and streamlined footer.
+
+IMPORTANT
+- Preview only after extracting the ZIP completely.
+- Open index.html from the extracted folder.
+- Review desktop and mobile appearance before publishing.
