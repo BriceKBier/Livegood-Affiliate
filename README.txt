@@ -1,3 +1,7 @@
-UCANWORKFROMHOME VERSION 6.2 — NATURAL PHOTO FIX
+UCanWorkFromHome v15.0.1 Guided Wellness Tour
 
-The homepage hero now uses the complete original 4:3 photograph with no cropping and no blank bands. The hero is a true three-column layout.
+Updates:
+- Much stronger text contrast on every tour slide
+- Slides wait for narration to finish before advancing
+- Browser chooses the most natural English voice available
+- Slightly slower, calmer narration pacing
