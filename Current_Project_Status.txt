@@ -1,7 +1,9 @@
-UCanWorkFromHome Project Status — Version 15.3.1
-Date: July 28, 2026
+UCanWorkFromHome Project Status — Version 15.3.9
+Date: July 30, 2026
 
 Completed:
+- Removed Brice's photo from slide 6 of the Guided Wellness Tour.
+- Rebuilt slide 6 as a centered, single-panel ending that fits mobile screens.
 - Guided Wellness Tour now stops permanently on the final screen instead of looping.
 - Added Return to Home as a fourth final choice.
 - Added a delayed thank-you message after narration ends.
@@ -9,4 +11,4 @@ Completed:
 - Replay control remains available if the visitor wants to watch again.
 
 Latest package:
-UCanWorkFromHome-v15.3.1-FINAL-SCREEN-FIX.zip
+UCanWorkFromHome-v15.3.9-SLIDE-6-PHOTO-REMOVED.zip

@@ -3430,3 +3430,45 @@ body.tour-open{overflow:hidden}.wellness-tour[hidden]{display:none}.wellness-tou
   .tour-final-navigation{left:28px!important;right:28px!important;bottom:88px!important}
   .tour-final-navigation a{flex:1 1 calc(50% - 8px)!important;padding:11px 12px!important;font-size:.9rem!important}
 }
+
+/* v15.3.9: remove the closing portrait and keep slide 6 mobile-safe */
+.final-scene{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:linear-gradient(135deg,#071811 0%,#0b5f43 100%)!important;
+}
+.final-scene .tour-final-copy{
+  width:min(760px,calc(100% - 80px))!important;
+  max-width:760px!important;
+  min-height:0!important;
+  margin:0 auto 96px!important;
+  padding:48px 52px!important;
+  border:1px solid rgba(255,255,255,.16)!important;
+  border-radius:24px!important;
+  box-shadow:0 22px 65px rgba(0,0,0,.34)!important;
+}
+.tour-final-navigation{
+  left:50%!important;
+  right:auto!important;
+  width:min(760px,calc(100% - 80px))!important;
+  transform:translateX(-50%)!important;
+  justify-content:center!important;
+}
+@media(max-width:760px){
+  .final-scene{grid-template-columns:none!important;grid-template-rows:none!important}
+  .final-scene .tour-final-copy{
+    width:calc(100% - 32px)!important;
+    margin:0 16px 170px!important;
+    padding:26px 22px!important;
+    border-radius:18px!important;
+  }
+  .final-scene .tour-final-copy h2{font-size:clamp(1.9rem,9vw,2.8rem)!important}
+  .tour-final-navigation{
+    left:16px!important;
+    right:16px!important;
+    bottom:76px!important;
+    width:auto!important;
+    transform:none!important;
+  }
+}
