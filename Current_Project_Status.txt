@@ -1,5 +1,5 @@
-UCanWorkFromHome Project Status — Version 15.3.9
-Date: July 30, 2026
+UCanWorkFromHome Project Status — Version 15.4.0
+Date: July 31, 2026
 
 Completed:
 - Removed Brice's photo from slide 6 of the Guided Wellness Tour.
@@ -10,5 +10,14 @@ Completed:
 - Final action buttons fade in one at a time.
 - Replay control remains available if the visitor wants to watch again.
 
+Version 15.4.0 traffic improvements:
+- Rebuilt and restored livegood-compensation-plan-2026.html in the package.
+- Linked directly to LiveGood's current official compensation plan.
+- Expanded the guide to cover all seven earning methods and realistic cautions.
+- Rebuilt and restored products.html around coffee, collagen, magnesium and Super Greens.
+- Improved the homepage search title and description.
+- Strengthened internal links and updated the sitemap.
+- Preserved every Version 15.3.9 Guided Wellness Tour fix.
+
 Latest package:
-UCanWorkFromHome-v15.3.9-SLIDE-6-PHOTO-REMOVED.zip
+UCanWorkFromHome-v15.4.0-SEARCH-TRAFFIC-UPGRADE.zip
