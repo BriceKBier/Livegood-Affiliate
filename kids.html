@@ -135,4 +135,5 @@ $('animalVideo').addEventListener('click',()=>{if(typeof gtag==='function')gtag(
 renderGrid();renderAnimal(active);const b=document.querySelector('.menu'),n=document.querySelector('nav');b?.addEventListener('click',()=>n.classList.toggle('open'));
 </script>
 <script id="reader-share-script">(()=>{const copy=async text=>{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text);return}const area=document.createElement('textarea');area.value=text;area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();document.execCommand('copy');area.remove()};document.querySelectorAll('.share-action[data-share-url]').forEach(button=>button.addEventListener('click',async()=>{const url=button.dataset.shareUrl,title=button.dataset.shareTitle||document.title,text=button.dataset.shareText||'Found this on UCanWorkFromHome:';try{if(button.dataset.shareMode==='native'&&navigator.share&&location.protocol==='https:')await navigator.share({title,text,url});else{await copy(url);button.textContent='Link copied!'}}catch(error){if(error.name!=='AbortError'){await copy(url);button.textContent='Link copied!'}}}))})();</script>
-<script src="social-share.js" defer></script></body></html>
+<script src="social-share.js" defer></script><script src="news-ticker.js" defer></script>
+</body></html>
