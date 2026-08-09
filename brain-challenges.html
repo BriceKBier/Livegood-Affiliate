@@ -65,7 +65,7 @@ function checkChoice(n,ok,msg){setResult(n,ok,msg)}
 function shareText(){return 'I scored '+solved.size+'/10 on these brain challenges. Can you beat me?'}
 function shareUrl(){return 'https://ucanworkfromhome.com/brain-challenges.html?utm_source=share&utm_medium=referral&utm_campaign=brain_challenge'}
 async function shareChallenge(){if(navigator.share){try{await navigator.share({title:'10 Brain Challenges',text:shareText(),url:shareUrl()});gtag?.('event','share',{method:'web_share',content_type:'brain_challenge'});return}catch(e){if(e.name==='AbortError')return}}copyChallengeLink()}
-async function copyChallengeLink(){try{await navigator.clipboard.writeText(shareText()+' '+shareUrl());document.getElementById('shareNote').textContent='✓ Challenge link copied — paste it into a text, email or post.';gtag?.('event','share',{method:'copy_link',content_type:'brain_challenge'})}catch(e){prompt('Copy this link:',shareUrl())}}
+async function copyChallengeLink(){try{await navigator.clipboard.writeText(shareUrl());document.getElementById('shareNote').textContent='✓ Link copied — paste it into a browser, text, email or post.';gtag?.('event','share',{method:'copy_link',content_type:'brain_challenge'})}catch(e){prompt('Copy this link:',shareUrl())}}
 function setupSharing(){document.getElementById('facebookShare').href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(shareUrl())}
 function resetProgress(){if(confirm('Reset all 10 solved challenges?')){solved.clear();localStorage.removeItem('brainSolved');document.querySelectorAll('.result').forEach(x=>{x.textContent='';x.className='result'});renderProgress()}}
 let memoryActive=false;
