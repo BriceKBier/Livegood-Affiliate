@@ -1,0 +1,14 @@
+UCanWorkFromHome 5.12 — Credit Card Welcome Bonus Emphasis
+Built from 5.11.
+
+Changes:
+- Hilton referral sections now prominently mention that a current welcome bonus may be available.
+- Delta referral sections now prominently mention that a current SkyMiles welcome bonus may be available.
+- Buttons now say:
+  - See Current Hilton Bonus Offer
+  - See Current Delta Bonus Offer
+- No fixed bonus-point amount is hard-coded because AmEx offers can change.
+- Added disclaimer that welcome offers, eligibility, spend requirements, annual fees and terms are determined by American Express and may change.
+
+Tello, Hilton and Delta referral URLs remain unchanged from the approved 5.11 build.
+Preview locally before upload.

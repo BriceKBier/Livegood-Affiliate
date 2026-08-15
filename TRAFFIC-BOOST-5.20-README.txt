@@ -1,0 +1,4 @@
+
+TRAFFIC BOOST 5.20
+- Fixed only the ANIMAL OF THE WEEK label readability on Amazing Animals.
+- No pictures, layout, animal data, or other page content changed.

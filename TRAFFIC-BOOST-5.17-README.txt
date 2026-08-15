@@ -1,0 +1,5 @@
+UCanWorkFromHome 5.17 — Amazing Animals Heading Readability
+
+Fix:
+- Darkened and enlarged “THE FIRST 12” above “Explore the Amazing Animals collection.”
+- No other layout or content changes.

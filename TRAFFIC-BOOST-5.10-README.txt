@@ -1,0 +1,10 @@
+UCanWorkFromHome 5.10 — Tello Referral Correction
+Built from 5.9.
+
+- Replaces the generic Tello homepage link with Brice's exact referral link:
+  https://tello.com/account/register?_referral=P3P96KDV
+- Adds the verified current Tello referral benefit: a new eligible referred customer receives $10 in Tello Dollars after the first successful order.
+- Adds clear disclosure that Brice is a Tello customer and receives a referral reward after the eligibility period.
+- Adds Tello to Popular Resources on the homepage.
+- Hilton and Delta referral links from 5.9 remain preserved.
+Preview locally before upload.
