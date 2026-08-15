@@ -1,0 +1,17 @@
+UCanWorkFromHome 5.15 — Kids & Grandkids Homepage Fix
+Built directly from 5.14.
+
+FIX:
+- Kids & Grandkids is now a full, visible homepage category card.
+- Homepage categories now include:
+  Work From Home
+  Life After 60
+  Health & Wellness
+  FUN
+  Kids & Grandkids
+  About Brice
+- Kids & Grandkids also appears in Popular Resources.
+- Existing 5.14 Kids/FUN links and all 5.13 Traffic Expansion work remain.
+- Tello, Hilton, Delta, LiveGood, Travel & Rewards and Brice Recommends remain preserved.
+
+Preview locally before upload.

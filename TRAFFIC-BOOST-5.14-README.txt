@@ -1,0 +1,10 @@
+UCanWorkFromHome 5.14 — Kids & Grandkids Restored
+Built directly from 5.13.
+
+- Approved 5.12 homepage appearance remains untouched.
+- Restores a prominent Kids & Grandkids feature on the FUN page.
+- Links Kids & Grandkids to Kids Learning, K–3 Math Adventures, Amazing Animals and Brain Challenges.
+- Adds return navigation from key kids pages back to Kids & Grandkids and FUN.
+- Ensures key kids URLs are in sitemap.xml.
+- All 5.13 traffic-expansion pages remain.
+- Tello, Hilton, Delta, LiveGood, Travel & Rewards and Brice Recommends remain preserved.

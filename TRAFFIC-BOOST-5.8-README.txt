@@ -1,0 +1,8 @@
+UCanWorkFromHome 5.8
+Real HTML/CSS reproduction of the approved homepage rendering.
+- Restores Brice's actual brice-bier.jpg photo.
+- Uses local coastal/drone images from the existing site package.
+- Rebuilds header, hero, five category cards, blog/resources panels and footer.
+- Preserves the 5.6 Traffic Boost articles and restored FUN area.
+- No fake newsletter signup form was added because there is no mailing-list backend configured.
+Preview index.html locally before upload.

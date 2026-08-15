@@ -1,0 +1,14 @@
+UCanWorkFromHome 5.18 — Kids Text Boldness Only
+
+Built from the user-supplied clean Kids version.
+
+CHANGES:
+- Preserved the clean Kids & Grandkids landing page exactly as supplied.
+- Increased font weight for Kids page text so it is easier to read.
+- No layout changes.
+- No image changes.
+- No card changes.
+- No navigation redesign.
+- No content moved or removed.
+
+Preview kids.html locally before upload.

@@ -1,0 +1,22 @@
+UCanWorkFromHome 5.13 — Traffic Expansion
+Built directly from approved 5.12. The approved homepage design and referral links are preserved.
+
+6 NEW SEARCH-FOCUSED GUIDES:
+1. Legitimate Work From Home Jobs With No Fees
+2. Part-Time Work From Home Jobs for Retirees
+3. Easy Side Hustles for Seniors Over 60
+4. Remote Customer Service Jobs for Seniors & Retirees
+5. Affiliate Marketing Over 60
+6. Best Remote Jobs With No Degree for Adults Over 50
+
+TRAFFIC WORK:
+- New guides added to Work From Home hub.
+- New guides surfaced on Blog.
+- Contextual internal links added from existing related articles.
+- New URLs added to sitemap.xml.
+- Articles use descriptive titles and meta descriptions.
+- No guaranteed-income claims.
+- 5.12 homepage appearance intentionally untouched.
+- Tello, Hilton, Delta, LiveGood, FUN, Travel & Rewards and Brice Recommends preserved.
+
+Preview locally before upload.

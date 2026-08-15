@@ -1,0 +1,14 @@
+UCanWorkFromHome 5.16 — Kids Page Cleanup
+
+Built from 5.15.
+
+FIXES:
+- Replaced the huge, messy Kids page with a clean Kids & Grandkids landing page.
+- Kids page now has four clear choices: K–3 Math, Amazing Animals, Kids Learning, Brain Challenges.
+- The giant animal collection is no longer dumped directly onto kids.html.
+- Amazing Animals remains available on its own page.
+- Restored animal-specific CSS from the approved legacy build so Amazing Animals lays out correctly.
+- Homepage Kids & Grandkids card remains visible.
+- All Traffic Boost, affiliate/referral and FUN work remains intact.
+
+Preview kids.html and amazing-animals.html locally before upload.

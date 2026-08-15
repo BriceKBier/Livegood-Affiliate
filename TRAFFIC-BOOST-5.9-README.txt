@@ -1,0 +1,14 @@
+UCanWorkFromHome 5.9 — Restored Recommendations & Travel Rewards
+Built from 5.8.
+
+Restored from the approved later site:
+- Hilton Honors American Express referral link
+- Delta SkyMiles Gold American Express referral link
+- Tello recommendation
+- LiveGood shop and free business tour
+- Brice Recommends page
+- Travel & Rewards page
+- Referral disclosure language
+
+The exact Hilton and Delta referral URLs were recovered from the approved v16.6 site package, not recreated.
+Preview locally before upload.

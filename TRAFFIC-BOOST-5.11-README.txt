@@ -1,0 +1,10 @@
+UCanWorkFromHome 5.11 — Hilton Referral Fix
+Built from 5.10.
+
+Replaced the previous Hilton Honors American Express referral URL everywhere it appeared with Brice's newly supplied working referral URL:
+https://americanexpress.com/en-us/referral/hilton-honors?ref=BRICEbCdPx&xl=cp15
+
+Also changed Hilton button wording to direct visitors to current Hilton AmEx offers rather than hard-coding a promotional bonus that can change.
+
+Tello and Delta referral links remain preserved.
+Preview locally before upload.
