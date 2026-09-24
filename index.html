@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>UCanWorkFromHome | Realistic Ways to Earn After 50</title><meta name="description" content="Practical guidance for adults 50+ who want realistic work-from-home options, side hustles, flexible income and a better next chapter."><link rel="canonical" href="https://ucanworkfromhome.com/"/>
-<link rel="stylesheet" href="style.css"><style>.livegood-home-banner{background:linear-gradient(90deg,#0b6f3b,#118b4a);padding:9px 4%;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.12)}.livegood-home-banner a{display:inline-flex;align-items:center;gap:8px;color:#ff0000!important;font-weight:900;font-size:clamp(.9rem,2vw,1.05rem);letter-spacing:.01em;text-decoration:none;animation:livegoodBlink .8s step-end infinite!important}.livegood-home-banner a:visited,.livegood-home-banner a:hover,.livegood-home-banner a:active{color:#ff0000!important}.livegood-home-banner .lg-arrow{font-size:1.2em;color:#ff0000!important}@keyframes livegoodBlink{0%,49%{opacity:1}50%,100%{opacity:.12}}@media(max-width:650px){.livegood-home-banner{padding:10px 12px}.livegood-home-banner a{line-height:1.25}}</style></head><body><a class="skip-link" href="#main">Skip to content</a>
+<link rel="stylesheet" href="style.css"><style>.livegood-home-banner{background:linear-gradient(90deg,#0b6f3b,#118b4a);padding:9px 4%;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.12)}.livegood-home-banner a{display:inline-flex;align-items:center;gap:8px;color:#ff0000!important;font-weight:900;font-size:clamp(.9rem,2vw,1.05rem);letter-spacing:.01em;text-decoration:none}.livegood-home-banner a:visited,.livegood-home-banner a:hover,.livegood-home-banner a:active{color:#ff0000!important}.livegood-home-banner .lg-arrow{font-size:1.2em;color:#ff0000!important}@media(max-width:650px){.livegood-home-banner{padding:10px 12px}.livegood-home-banner a{line-height:1.25}}</style></head><body><a class="skip-link" href="#main">Skip to content</a>
 <header class="v58-top">
   <div class="v58-utility"><div class="container"><span></span><div><a href="work-from-home.html">Start Here</a><b>|</b><a href="blog.html">Blog</a><b>|</b><a href="travel.html">Travel & Rewards</a><b>|</b><a href="brice-recommends.html">Brice Recommends</a><b>|</b><a href="#contact">Contact</a></div></div></div>
   <div class="container v58-nav">
@@ -17,7 +17,7 @@
     </nav>
   </div>
 </header>
-<div class="livegood-home-banner" role="region" aria-label="LiveGood business opportunity"><a href="https://www.livegoodtour.com/Brice" target="_blank" rel="noopener noreferrer sponsored">See How the LiveGood Business Can Work for You <span class="lg-arrow">→</span></a></div>
+<div class="livegood-home-banner" role="region" aria-label="LiveGood business opportunity"><a id="livegoodBlinkLink" href="https://www.livegoodtour.com/Brice" target="_blank" rel="noopener noreferrer sponsored">See How the LiveGood Business Can Work for You <span class="lg-arrow">→</span></a></div>
 <div class="v58-mobile-quick" aria-label="Travel quick link">
   <a href="travel.html">✈ Travel</a>
 </div>
@@ -92,5 +92,7 @@
 <script>
 const b=document.querySelector('.v58-menu'),n=document.querySelector('#v58-links');
 if(b&&n){b.addEventListener('click',()=>{const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!o));n.classList.toggle('open',!o)})}
+const lgBlink=document.getElementById('livegoodBlinkLink');
+if(lgBlink){let visible=true;setInterval(()=>{visible=!visible;lgBlink.style.visibility=visible?'visible':'hidden'},650)}
 </script>
 </body></html>
